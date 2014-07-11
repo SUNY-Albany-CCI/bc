@@ -13,15 +13,6 @@ df = pd.read_csv(&#34;discharges.csv&#34;)</pre>
 
 
 <div class="in">
-<pre>df.columns</pre>
-</div>
-
-<div class="out">
-<pre>Index([u&#39;Unnamed: 0&#39;, u&#39;Hospital Service Area&#39;, u&#39;Hospital County&#39;, u&#39;Operating Certificate Number&#39;, u&#39;Facility Id&#39;, u&#39;Facility Name&#39;, u&#39;Age Group&#39;, u&#39;Zip Code - 3 digits&#39;, u&#39;Gender&#39;, u&#39;Race&#39;, u&#39;Ethnicity&#39;, u&#39;Length of Stay&#39;, u&#39;Admit Day of Week&#39;, u&#39;Type of Admission&#39;, u&#39;Patient Disposition&#39;, u&#39;Discharge Year&#39;, u&#39;Discharge Day of Week&#39;, u&#39;CCS Diagnosis Code&#39;, u&#39;CCS Diagnosis Description&#39;, u&#39;CCS Procedure Code&#39;, u&#39;CCS Procedure Description&#39;, u&#39;APR DRG Code&#39;, u&#39;APR DRG Description&#39;, u&#39;APR MDC Code&#39;, u&#39;APR MDC Description&#39;, u&#39;APR Severity of Illness Code&#39;, u&#39;APR Severity of Illness Description&#39;, u&#39;APR Risk of Mortality&#39;, u&#39;APR Medical Surgical Description&#39;, u&#39;Source of Payment 1&#39;, u&#39;Source of Payment 2&#39;, u&#39;Source of Payment 3&#39;, u&#39;Attending Provider License Number&#39;, u&#39;Operating Provider License Number&#39;, u&#39;Other Provider License Number&#39;, u&#39;Birth Weight&#39;, u&#39;Abortion Edit Indicator&#39;, u&#39;Emergency Department Indicator&#39;, u&#39;Total Charges&#39;], dtype=&#39;object&#39;)</pre>
-</div>
-
-
-<div class="in">
 <pre>import string
 tbl = string.maketrans(&#34;&#34;, &#34;&#34;)
 
@@ -44,7 +35,7 @@ df[&#39;Total Charges&#39;] = df[&#39;Total Charges&#39;].apply(lambda x: float(
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x501acd0&gt;
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_4_1.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_3_1.png">
 </pre>
 </div>
 
@@ -64,7 +55,7 @@ df[&#39;Total Charges&#39;] = df[&#39;Total Charges&#39;].apply(lambda x: float(
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x5929590&gt;
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_6_1.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_5_1.png">
 </pre>
 </div>
 
@@ -76,7 +67,7 @@ df[df[&#39;Total Charges&#39;] &lt; 500000][&#39;Total Charges&#39;].hist(bins=2
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x6530bd0&gt;
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_7_1.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_6_1.png">
 </pre>
 </div>
 
@@ -710,7 +701,7 @@ i = interact(by_county, county=list(df[&#39;Hospital County&#39;].dropna().uniqu
 
 <div class="out">
 <pre>
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_11_0.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_10_0.png">
 </pre>
 </div>
 
@@ -749,7 +740,7 @@ i = interact(by_county_with_0to17, county=list(df[&#39;Hospital County&#39;].dro
 
 <div class="out">
 <pre>
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_13_0.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_12_0.png">
 </pre>
 </div>
 
@@ -760,7 +751,7 @@ i = interact(by_county_with_0to17, county=list(df[&#39;Hospital County&#39;].dro
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x66f4510&gt;
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_14_1.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_13_1.png">
 </pre>
 </div>
 
@@ -774,7 +765,7 @@ i = interact(by_county_with_0to17, county=list(df[&#39;Hospital County&#39;].dro
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x6f40f50&gt;
-<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_15_1.png">
+<img src="../../intermediate/python/05-datavis_files/intermediate/python/05-datavis_14_1.png">
 </pre>
 </div>
 
