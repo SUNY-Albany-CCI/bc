@@ -8,7 +8,7 @@ root: ../..
 <pre>%matplotlib inline
 from matplotlib import pylab as plt
 import pandas as pd
-df = pd.read_csv(&#34;discharges.csv&#34;)</pre>
+df = pd.read_csv(&#34;discharges.csv&#34;) </pre>
 </div>
 
 

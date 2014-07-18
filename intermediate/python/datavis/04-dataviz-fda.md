@@ -3,7 +3,7 @@ layout: lesson
 root: ../..
 ---
 
-# Visualizing FDA Data
+# Visualizing FDA Data 
 
 
 <div>
