@@ -1,0 +1,1497 @@
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Hospital Service Area</th>
+      <th>Hospital County</th>
+      <th>Operating Certificate Number</th>
+      <th>Facility Id</th>
+      <th>Facility Name</th>
+      <th>Age Group</th>
+      <th>Zip Code - 3 digits</th>
+      <th>Gender</th>
+      <th>Race</th>
+      <th>...</th>
+      <th>Source of Payment 1</th>
+      <th>Source of Payment 2</th>
+      <th>Source of Payment 3</th>
+      <th>Attending Provider License Number</th>
+      <th>Operating Provider License Number</th>
+      <th>Other Provider License Number</th>
+      <th>Birth Weight</th>
+      <th>Abortion Edit Indicator</th>
+      <th>Emergency Department Indicator</th>
+      <th>Total Charges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0   </th>
+      <td>      1</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 120</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 263087</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  62328.96</td>
+    </tr>
+    <tr>
+      <th>1   </th>
+      <td>    101</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    30 to 49</td>
+      <td> 122</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 237382</td>
+      <td> 237382</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  30063.34</td>
+    </tr>
+    <tr>
+      <th>2   </th>
+      <td>    201</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>     0 to 17</td>
+      <td> 121</td>
+      <td> M</td>
+      <td>             Other Race</td>
+      <td>...</td>
+      <td>              Medicaid</td>
+      <td>               Unknown</td>
+      <td>      NaN</td>
+      <td> 222416</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  14315.22</td>
+    </tr>
+    <tr>
+      <th>3   </th>
+      <td>    301</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    30 to 49</td>
+      <td> 120</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>               Unknown</td>
+      <td>      NaN</td>
+      <td>   3814</td>
+      <td> 205269</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  32244.05</td>
+    </tr>
+    <tr>
+      <th>4   </th>
+      <td>    401</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 121</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 261103</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  28109.18</td>
+    </tr>
+    <tr>
+      <th>5   </th>
+      <td>    501</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>     0 to 17</td>
+      <td> 121</td>
+      <td> F</td>
+      <td> Black/African American</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 265285</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  21159.98</td>
+    </tr>
+    <tr>
+      <th>6   </th>
+      <td>    601</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    18 to 29</td>
+      <td> 120</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 265038</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   8800.68</td>
+    </tr>
+    <tr>
+      <th>7   </th>
+      <td>    701</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    30 to 49</td>
+      <td> 125</td>
+      <td> M</td>
+      <td> Black/African American</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 253982</td>
+      <td> 228744</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  71088.71</td>
+    </tr>
+    <tr>
+      <th>8   </th>
+      <td>    801</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>     0 to 17</td>
+      <td> 123</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 146395</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  18795.74</td>
+    </tr>
+    <tr>
+      <th>9   </th>
+      <td>    901</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 121</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 236885</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   5931.00</td>
+    </tr>
+    <tr>
+      <th>10  </th>
+      <td>   1001</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 120</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td> Self-Pay</td>
+      <td> 253378</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  29129.62</td>
+    </tr>
+    <tr>
+      <th>11  </th>
+      <td>   1101</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>     0 to 17</td>
+      <td> 112</td>
+      <td> M</td>
+      <td> Black/African American</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 204436</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  41506.95</td>
+    </tr>
+    <tr>
+      <th>12  </th>
+      <td>   1201</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 120</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>            Blue Cross</td>
+      <td> Self-Pay</td>
+      <td> 236885</td>
+      <td> 147471</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  42735.52</td>
+    </tr>
+    <tr>
+      <th>13  </th>
+      <td>   1301</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>     0 to 17</td>
+      <td> 122</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 264898</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  12221.78</td>
+    </tr>
+    <tr>
+      <th>14  </th>
+      <td>   1401</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 120</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td>   3623</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  12417.50</td>
+    </tr>
+    <tr>
+      <th>15  </th>
+      <td>   1501</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 121</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Medicare</td>
+      <td> Self-Pay</td>
+      <td> 248788</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  18519.71</td>
+    </tr>
+    <tr>
+      <th>16  </th>
+      <td>   1601</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 122</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>               Unknown</td>
+      <td>      NaN</td>
+      <td> 252582</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  25445.40</td>
+    </tr>
+    <tr>
+      <th>17  </th>
+      <td>   1701</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 120</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 216951</td>
+      <td> 216951</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  37624.47</td>
+    </tr>
+    <tr>
+      <th>18  </th>
+      <td>   1801</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    30 to 49</td>
+      <td> 120</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Medicaid</td>
+      <td>  Unknown</td>
+      <td>   3623</td>
+      <td> 260692</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  26166.66</td>
+    </tr>
+    <tr>
+      <th>19  </th>
+      <td>   1901</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    30 to 49</td>
+      <td> 121</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 170254</td>
+      <td> 170254</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  54876.95</td>
+    </tr>
+    <tr>
+      <th>20  </th>
+      <td>   2001</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 122</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td>   3774</td>
+      <td>   3774</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  49091.48</td>
+    </tr>
+    <tr>
+      <th>21  </th>
+      <td>   2101</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 122</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td> Self-Pay</td>
+      <td> 263087</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  31718.42</td>
+    </tr>
+    <tr>
+      <th>22  </th>
+      <td>   2201</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 128</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td>   3774</td>
+      <td> 135402</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td> 137673.37</td>
+    </tr>
+    <tr>
+      <th>23  </th>
+      <td>   2301</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 122</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>            Blue Cross</td>
+      <td> Self-Pay</td>
+      <td> 259048</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  17304.63</td>
+    </tr>
+    <tr>
+      <th>24  </th>
+      <td>   2401</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 123</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 194958</td>
+      <td> 242380</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  26631.91</td>
+    </tr>
+    <tr>
+      <th>25  </th>
+      <td>   2501</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 120</td>
+      <td> F</td>
+      <td> Black/African American</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicaid</td>
+      <td> Self-Pay</td>
+      <td> 236885</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  14764.46</td>
+    </tr>
+    <tr>
+      <th>26  </th>
+      <td>   2601</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 123</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicare</td>
+      <td>  Unknown</td>
+      <td> 200271</td>
+      <td> 237006</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  31116.11</td>
+    </tr>
+    <tr>
+      <th>27  </th>
+      <td>   2701</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    18 to 29</td>
+      <td> 121</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>  Workers Compensation</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 218155</td>
+      <td> 216772</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  44902.41</td>
+    </tr>
+    <tr>
+      <th>28  </th>
+      <td>   2801</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td> 70 or Older</td>
+      <td> 120</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>            Blue Cross</td>
+      <td> Medicare</td>
+      <td> 216951</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  48036.38</td>
+    </tr>
+    <tr>
+      <th>29  </th>
+      <td>   2901</td>
+      <td> Capital/Adiron</td>
+      <td>    Albany</td>
+      <td>  101000</td>
+      <td>   1</td>
+      <td> Albany Medical Center Hospital</td>
+      <td>    50 to 69</td>
+      <td> 124</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>     Insurance Company</td>
+      <td> Medicaid</td>
+      <td> 265285</td>
+      <td> 258924</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  17321.10</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9970</th>
+      <td> 997001</td>
+      <td> Capital/Adiron</td>
+      <td> Schoharie</td>
+      <td> 4720001</td>
+      <td> 851</td>
+      <td>   Cobleskill Regional Hospital</td>
+      <td>    50 to 69</td>
+      <td> 120</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>     Insurance Company</td>
+      <td>                   NaN</td>
+      <td>      NaN</td>
+      <td> 218373</td>
+      <td> 218373</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  11929.88</td>
+    </tr>
+    <tr>
+      <th>9971</th>
+      <td> 997101</td>
+      <td> Capital/Adiron</td>
+      <td> Schoharie</td>
+      <td> 4720001</td>
+      <td> 851</td>
+      <td>   Cobleskill Regional Hospital</td>
+      <td>    50 to 69</td>
+      <td> 121</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicaid</td>
+      <td>      NaN</td>
+      <td> 211403</td>
+      <td> 211403</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   6929.94</td>
+    </tr>
+    <tr>
+      <th>9972</th>
+      <td> 997201</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td> Other Federal Program</td>
+      <td>      NaN</td>
+      <td> 196510</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   2915.51</td>
+    </tr>
+    <tr>
+      <th>9973</th>
+      <td> 997301</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicaid</td>
+      <td>      NaN</td>
+      <td> 260591</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   4327.66</td>
+    </tr>
+    <tr>
+      <th>9974</th>
+      <td> 997401</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td>    18 to 29</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>                   NaN</td>
+      <td>      NaN</td>
+      <td> 181109</td>
+      <td> 181109</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   6682.82</td>
+    </tr>
+    <tr>
+      <th>9975</th>
+      <td> 997501</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td> Other Federal Program</td>
+      <td>      NaN</td>
+      <td> 250729</td>
+      <td> 250729</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   4439.98</td>
+    </tr>
+    <tr>
+      <th>9976</th>
+      <td> 997601</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td>    50 to 69</td>
+      <td> 145</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td> Other Federal Program</td>
+      <td>                   NaN</td>
+      <td>      NaN</td>
+      <td> 178890</td>
+      <td>    NaN</td>
+      <td> 250729</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  10109.62</td>
+    </tr>
+    <tr>
+      <th>9977</th>
+      <td> 997701</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td>    30 to 49</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicaid</td>
+      <td>                   NaN</td>
+      <td>      NaN</td>
+      <td> 260591</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   4576.64</td>
+    </tr>
+    <tr>
+      <th>9978</th>
+      <td> 997801</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td> Other Federal Program</td>
+      <td>      NaN</td>
+      <td> 178890</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   1279.01</td>
+    </tr>
+    <tr>
+      <th>9979</th>
+      <td> 997901</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 260591</td>
+      <td> 260591</td>
+      <td> 157471</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   8947.41</td>
+    </tr>
+    <tr>
+      <th>9980</th>
+      <td> 998001</td>
+      <td>   Finger Lakes</td>
+      <td>  Schuyler</td>
+      <td> 4823700</td>
+      <td> 858</td>
+      <td>              Schuyler Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Self-Pay</td>
+      <td>                   NaN</td>
+      <td>      NaN</td>
+      <td> 260591</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   6621.28</td>
+    </tr>
+    <tr>
+      <th>9981</th>
+      <td> 998101</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 243860</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  12446.00</td>
+    </tr>
+    <tr>
+      <th>9982</th>
+      <td> 998201</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 262066</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   7948.50</td>
+    </tr>
+    <tr>
+      <th>9983</th>
+      <td> 998301</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicaid</td>
+      <td>      NaN</td>
+      <td> 151614</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  11899.75</td>
+    </tr>
+    <tr>
+      <th>9984</th>
+      <td> 998401</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 262066</td>
+      <td> 153771</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  16784.75</td>
+    </tr>
+    <tr>
+      <th>9985</th>
+      <td> 998501</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 153771</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>  16147.25</td>
+    </tr>
+    <tr>
+      <th>9986</th>
+      <td> 998601</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 153771</td>
+      <td>    NaN</td>
+      <td> 244514</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   4430.25</td>
+    </tr>
+    <tr>
+      <th>9987</th>
+      <td> 998701</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 151614</td>
+      <td>    NaN</td>
+      <td> 177443</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   7625.00</td>
+    </tr>
+    <tr>
+      <th>9988</th>
+      <td> 998801</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 151614</td>
+      <td> 202336</td>
+      <td> 153671</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  27442.00</td>
+    </tr>
+    <tr>
+      <th>9989</th>
+      <td> 998901</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 262066</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   8311.00</td>
+    </tr>
+    <tr>
+      <th>9990</th>
+      <td> 999001</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 249990</td>
+      <td>    NaN</td>
+      <td> 234124</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   6299.25</td>
+    </tr>
+    <tr>
+      <th>9991</th>
+      <td> 999101</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 153771</td>
+      <td> 171866</td>
+      <td> 172789</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  10041.75</td>
+    </tr>
+    <tr>
+      <th>9992</th>
+      <td> 999201</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 249990</td>
+      <td> 178316</td>
+      <td> 222906</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  15825.75</td>
+    </tr>
+    <tr>
+      <th>9993</th>
+      <td> 999301</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Medicare</td>
+      <td>      NaN</td>
+      <td> 249990</td>
+      <td>    NaN</td>
+      <td> 142060</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   8662.50</td>
+    </tr>
+    <tr>
+      <th>9994</th>
+      <td> 999401</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> OOS</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Self-Pay</td>
+      <td>                   NaN</td>
+      <td>      NaN</td>
+      <td> 151614</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>   4422.00</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td> 999501</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 252316</td>
+      <td>    NaN</td>
+      <td> 208550</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   8134.25</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td> 999601</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    50 to 69</td>
+      <td> 148</td>
+      <td> M</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 151614</td>
+      <td>    NaN</td>
+      <td> 172789</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  18369.50</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td> 999701</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    18 to 29</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>            Blue Cross</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 258271</td>
+      <td> 258271</td>
+      <td> 258271</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> N</td>
+      <td>   1895.25</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td> 999801</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td> 70 or Older</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicare</td>
+      <td>     Insurance Company</td>
+      <td>      NaN</td>
+      <td> 171192</td>
+      <td>    NaN</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  10532.75</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td> 999901</td>
+      <td>   Finger Lakes</td>
+      <td>   Steuben</td>
+      <td> 5001000</td>
+      <td> 866</td>
+      <td>               Corning Hospital</td>
+      <td>    30 to 49</td>
+      <td> 148</td>
+      <td> F</td>
+      <td>                  White</td>
+      <td>...</td>
+      <td>              Medicaid</td>
+      <td>              Self-Pay</td>
+      <td>      NaN</td>
+      <td> 171192</td>
+      <td> 178316</td>
+      <td>    NaN</td>
+      <td> 0</td>
+      <td> N</td>
+      <td> Y</td>
+      <td>  11569.50</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 39 columns</p>
+</div>

@@ -1,0 +1,8 @@
+CCS Diagnosis Description
+DEVICE/IMPLNT/GRFT COMP      2
+HYPERTENSION W/COMPL         2
+LIVEBORN                     8
+OPEN WOUND EXTREMITIES       1
+OTHER BONE DISEASE           1
+RHEUMATOID ARTHRITIS         1
+dtype: int64

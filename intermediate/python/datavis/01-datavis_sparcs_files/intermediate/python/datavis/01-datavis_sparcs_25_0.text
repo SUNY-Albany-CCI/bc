@@ -1,0 +1,11 @@
+CCS Diagnosis Description  Patient Disposition         
+DEVICE/IMPLNT/GRFT COMP    Home or Self Care               2
+HYPERTENSION W/COMPL       Home or Self Care               2
+LIVEBORN                   Expired                         1
+                           Home or Self Care               5
+                           Home w/ Home Health Services    1
+                           Short-term Hospital             1
+OPEN WOUND EXTREMITIES     Home or Self Care               1
+OTHER BONE DISEASE         Home w/ Home Health Services    1
+RHEUMATOID ARTHRITIS       Home w/ Home Health Services    1
+dtype: int64

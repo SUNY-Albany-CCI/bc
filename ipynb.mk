@@ -28,6 +28,7 @@ IPYNB_SRC = \
 	$(wildcard novice/python/??-*.ipynb) \
 	$(wildcard novice/sql/??-*.ipynb) \
 	$(wildcard intermediate/python/??-*.ipynb) \
+	$(wildcard intermediate/python/datavis/??-*.ipynb) \
 	$(wildcard intermediate/doit/??-*.ipynb)
 
 # Notebooks converted to Markdown.

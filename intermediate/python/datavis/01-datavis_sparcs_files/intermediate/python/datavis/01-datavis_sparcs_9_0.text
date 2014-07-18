@@ -1,0 +1,505 @@
+      Unnamed: 0 Hospital Service Area Hospital County  \
+0              1        Capital/Adiron          Albany   
+1            101        Capital/Adiron          Albany   
+2            201        Capital/Adiron          Albany   
+3            301        Capital/Adiron          Albany   
+4            401        Capital/Adiron          Albany   
+5            501        Capital/Adiron          Albany   
+6            601        Capital/Adiron          Albany   
+7            701        Capital/Adiron          Albany   
+8            801        Capital/Adiron          Albany   
+9            901        Capital/Adiron          Albany   
+10          1001        Capital/Adiron          Albany   
+11          1101        Capital/Adiron          Albany   
+12          1201        Capital/Adiron          Albany   
+13          1301        Capital/Adiron          Albany   
+14          1401        Capital/Adiron          Albany   
+15          1501        Capital/Adiron          Albany   
+16          1601        Capital/Adiron          Albany   
+17          1701        Capital/Adiron          Albany   
+18          1801        Capital/Adiron          Albany   
+19          1901        Capital/Adiron          Albany   
+20          2001        Capital/Adiron          Albany   
+21          2101        Capital/Adiron          Albany   
+22          2201        Capital/Adiron          Albany   
+23          2301        Capital/Adiron          Albany   
+24          2401        Capital/Adiron          Albany   
+25          2501        Capital/Adiron          Albany   
+26          2601        Capital/Adiron          Albany   
+27          2701        Capital/Adiron          Albany   
+28          2801        Capital/Adiron          Albany   
+29          2901        Capital/Adiron          Albany   
+...          ...                   ...             ...   
+9970      997001        Capital/Adiron       Schoharie   
+9971      997101        Capital/Adiron       Schoharie   
+9972      997201          Finger Lakes        Schuyler   
+9973      997301          Finger Lakes        Schuyler   
+9974      997401          Finger Lakes        Schuyler   
+9975      997501          Finger Lakes        Schuyler   
+9976      997601          Finger Lakes        Schuyler   
+9977      997701          Finger Lakes        Schuyler   
+9978      997801          Finger Lakes        Schuyler   
+9979      997901          Finger Lakes        Schuyler   
+9980      998001          Finger Lakes        Schuyler   
+9981      998101          Finger Lakes         Steuben   
+9982      998201          Finger Lakes         Steuben   
+9983      998301          Finger Lakes         Steuben   
+9984      998401          Finger Lakes         Steuben   
+9985      998501          Finger Lakes         Steuben   
+9986      998601          Finger Lakes         Steuben   
+9987      998701          Finger Lakes         Steuben   
+9988      998801          Finger Lakes         Steuben   
+9989      998901          Finger Lakes         Steuben   
+9990      999001          Finger Lakes         Steuben   
+9991      999101          Finger Lakes         Steuben   
+9992      999201          Finger Lakes         Steuben   
+9993      999301          Finger Lakes         Steuben   
+9994      999401          Finger Lakes         Steuben   
+9995      999501          Finger Lakes         Steuben   
+9996      999601          Finger Lakes         Steuben   
+9997      999701          Finger Lakes         Steuben   
+9998      999801          Finger Lakes         Steuben   
+9999      999901          Finger Lakes         Steuben   
+
+      Operating Certificate Number  Facility Id  \
+0                           101000            1   
+1                           101000            1   
+2                           101000            1   
+3                           101000            1   
+4                           101000            1   
+5                           101000            1   
+6                           101000            1   
+7                           101000            1   
+8                           101000            1   
+9                           101000            1   
+10                          101000            1   
+11                          101000            1   
+12                          101000            1   
+13                          101000            1   
+14                          101000            1   
+15                          101000            1   
+16                          101000            1   
+17                          101000            1   
+18                          101000            1   
+19                          101000            1   
+20                          101000            1   
+21                          101000            1   
+22                          101000            1   
+23                          101000            1   
+24                          101000            1   
+25                          101000            1   
+26                          101000            1   
+27                          101000            1   
+28                          101000            1   
+29                          101000            1   
+...                            ...          ...   
+9970                       4720001          851   
+9971                       4720001          851   
+9972                       4823700          858   
+9973                       4823700          858   
+9974                       4823700          858   
+9975                       4823700          858   
+9976                       4823700          858   
+9977                       4823700          858   
+9978                       4823700          858   
+9979                       4823700          858   
+9980                       4823700          858   
+9981                       5001000          866   
+9982                       5001000          866   
+9983                       5001000          866   
+9984                       5001000          866   
+9985                       5001000          866   
+9986                       5001000          866   
+9987                       5001000          866   
+9988                       5001000          866   
+9989                       5001000          866   
+9990                       5001000          866   
+9991                       5001000          866   
+9992                       5001000          866   
+9993                       5001000          866   
+9994                       5001000          866   
+9995                       5001000          866   
+9996                       5001000          866   
+9997                       5001000          866   
+9998                       5001000          866   
+9999                       5001000          866   
+
+                       Facility Name    Age Group Zip Code - 3 digits Gender  \
+0     Albany Medical Center Hospital  70 or Older                 120      F   
+1     Albany Medical Center Hospital     30 to 49                 122      M   
+2     Albany Medical Center Hospital      0 to 17                 121      M   
+3     Albany Medical Center Hospital     30 to 49                 120      M   
+4     Albany Medical Center Hospital     50 to 69                 121      F   
+5     Albany Medical Center Hospital      0 to 17                 121      F   
+6     Albany Medical Center Hospital     18 to 29                 120      F   
+7     Albany Medical Center Hospital     30 to 49                 125      M   
+8     Albany Medical Center Hospital      0 to 17                 123      M   
+9     Albany Medical Center Hospital     50 to 69                 121      F   
+10    Albany Medical Center Hospital     50 to 69                 120      M   
+11    Albany Medical Center Hospital      0 to 17                 112      M   
+12    Albany Medical Center Hospital  70 or Older                 120      M   
+13    Albany Medical Center Hospital      0 to 17                 122      F   
+14    Albany Medical Center Hospital     50 to 69                 120      F   
+15    Albany Medical Center Hospital  70 or Older                 121      M   
+16    Albany Medical Center Hospital     50 to 69                 122      F   
+17    Albany Medical Center Hospital     50 to 69                 120      M   
+18    Albany Medical Center Hospital     30 to 49                 120      F   
+19    Albany Medical Center Hospital     30 to 49                 121      M   
+20    Albany Medical Center Hospital     50 to 69                 122      M   
+21    Albany Medical Center Hospital  70 or Older                 122      F   
+22    Albany Medical Center Hospital     50 to 69                 128      M   
+23    Albany Medical Center Hospital  70 or Older                 122      F   
+24    Albany Medical Center Hospital     50 to 69                 123      F   
+25    Albany Medical Center Hospital     50 to 69                 120      F   
+26    Albany Medical Center Hospital  70 or Older                 123      F   
+27    Albany Medical Center Hospital     18 to 29                 121      M   
+28    Albany Medical Center Hospital  70 or Older                 120      M   
+29    Albany Medical Center Hospital     50 to 69                 124      F   
+...                              ...          ...                 ...    ...   
+9970    Cobleskill Regional Hospital     50 to 69                 120      M   
+9971    Cobleskill Regional Hospital     50 to 69                 121      F   
+9972               Schuyler Hospital     50 to 69                 148      M   
+9973               Schuyler Hospital     50 to 69                 148      F   
+9974               Schuyler Hospital     18 to 29                 148      F   
+9975               Schuyler Hospital  70 or Older                 148      F   
+9976               Schuyler Hospital     50 to 69                 145      M   
+9977               Schuyler Hospital     30 to 49                 148      F   
+9978               Schuyler Hospital  70 or Older                 148      F   
+9979               Schuyler Hospital  70 or Older                 148      M   
+9980               Schuyler Hospital     50 to 69                 148      F   
+9981                Corning Hospital     50 to 69                 148      M   
+9982                Corning Hospital     50 to 69                 148      F   
+9983                Corning Hospital  70 or Older                 148      F   
+9984                Corning Hospital     50 to 69                 148      M   
+9985                Corning Hospital  70 or Older                 148      F   
+9986                Corning Hospital  70 or Older                 148      F   
+9987                Corning Hospital     50 to 69                 148      M   
+9988                Corning Hospital  70 or Older                 148      M   
+9989                Corning Hospital  70 or Older                 148      M   
+9990                Corning Hospital  70 or Older                 148      M   
+9991                Corning Hospital     50 to 69                 148      F   
+9992                Corning Hospital  70 or Older                 148      F   
+9993                Corning Hospital  70 or Older                 148      F   
+9994                Corning Hospital     50 to 69                 OOS      M   
+9995                Corning Hospital     50 to 69                 148      F   
+9996                Corning Hospital     50 to 69                 148      M   
+9997                Corning Hospital     18 to 29                 148      F   
+9998                Corning Hospital  70 or Older                 148      F   
+9999                Corning Hospital     30 to 49                 148      F   
+
+                        Race           ...              Source of Payment 1  \
+0                      White           ...                         Medicare   
+1                      White           ...                         Medicare   
+2                 Other Race           ...                         Medicaid   
+3                      White           ...                       Blue Cross   
+4                      White           ...                Insurance Company   
+5     Black/African American           ...                Insurance Company   
+6                      White           ...                       Blue Cross   
+7     Black/African American           ...                Insurance Company   
+8                      White           ...                       Blue Cross   
+9                      White           ...                Insurance Company   
+10                     White           ...                         Medicare   
+11    Black/African American           ...                       Blue Cross   
+12                     White           ...                         Medicare   
+13                     White           ...                Insurance Company   
+14                     White           ...                Insurance Company   
+15                     White           ...                       Blue Cross   
+16                     White           ...                Insurance Company   
+17                     White           ...                       Blue Cross   
+18                     White           ...                Insurance Company   
+19                     White           ...                Insurance Company   
+20                     White           ...                Insurance Company   
+21                     White           ...                         Medicare   
+22                     White           ...                       Blue Cross   
+23                     White           ...                         Medicare   
+24                     White           ...                Insurance Company   
+25    Black/African American           ...                         Medicare   
+26                     White           ...                         Medicare   
+27                     White           ...             Workers Compensation   
+28                     White           ...                Insurance Company   
+29                     White           ...                Insurance Company   
+...                      ...           ...                              ...   
+9970                   White           ...                Insurance Company   
+9971                   White           ...                         Medicare   
+9972                   White           ...                         Medicare   
+9973                   White           ...                         Medicare   
+9974                   White           ...                       Blue Cross   
+9975                   White           ...                         Medicare   
+9976                   White           ...            Other Federal Program   
+9977                   White           ...                         Medicaid   
+9978                   White           ...                         Medicare   
+9979                   White           ...                         Medicare   
+9980                   White           ...                         Self-Pay   
+9981                   White           ...                         Medicare   
+9982                   White           ...                       Blue Cross   
+9983                   White           ...                         Medicare   
+9984                   White           ...                         Medicare   
+9985                   White           ...                         Medicare   
+9986                   White           ...                         Medicare   
+9987                   White           ...                       Blue Cross   
+9988                   White           ...                         Medicare   
+9989                   White           ...                         Medicare   
+9990                   White           ...                         Medicare   
+9991                   White           ...                         Medicare   
+9992                   White           ...                         Medicare   
+9993                   White           ...                         Medicare   
+9994                   White           ...                         Self-Pay   
+9995                   White           ...                       Blue Cross   
+9996                   White           ...                         Medicare   
+9997                   White           ...                       Blue Cross   
+9998                   White           ...                         Medicare   
+9999                   White           ...                         Medicaid   
+
+        Source of Payment 2 Source of Payment 3  \
+0                  Medicaid            Self-Pay   
+1                  Medicaid            Self-Pay   
+2                   Unknown                 NaN   
+3                   Unknown                 NaN   
+4                  Self-Pay                 NaN   
+5                  Medicaid            Self-Pay   
+6                  Self-Pay                 NaN   
+7                  Medicaid            Self-Pay   
+8                  Self-Pay                 NaN   
+9                  Self-Pay                 NaN   
+10        Insurance Company            Self-Pay   
+11                 Self-Pay                 NaN   
+12               Blue Cross            Self-Pay   
+13                 Medicaid            Self-Pay   
+14                 Self-Pay                 NaN   
+15                 Medicare            Self-Pay   
+16                  Unknown                 NaN   
+17                 Self-Pay                 NaN   
+18                 Medicaid             Unknown   
+19                 Medicaid            Self-Pay   
+20                 Self-Pay                 NaN   
+21        Insurance Company            Self-Pay   
+22                 Self-Pay                 NaN   
+23               Blue Cross            Self-Pay   
+24                 Self-Pay                 NaN   
+25                 Medicaid            Self-Pay   
+26                 Medicare             Unknown   
+27                 Self-Pay                 NaN   
+28               Blue Cross            Medicare   
+29        Insurance Company            Medicaid   
+...                     ...                 ...   
+9970                    NaN                 NaN   
+9971               Medicaid                 NaN   
+9972  Other Federal Program                 NaN   
+9973               Medicaid                 NaN   
+9974                    NaN                 NaN   
+9975  Other Federal Program                 NaN   
+9976                    NaN                 NaN   
+9977                    NaN                 NaN   
+9978  Other Federal Program                 NaN   
+9979      Insurance Company                 NaN   
+9980                    NaN                 NaN   
+9981               Self-Pay                 NaN   
+9982               Self-Pay                 NaN   
+9983               Medicaid                 NaN   
+9984               Self-Pay                 NaN   
+9985      Insurance Company                 NaN   
+9986      Insurance Company                 NaN   
+9987               Self-Pay                 NaN   
+9988      Insurance Company                 NaN   
+9989      Insurance Company                 NaN   
+9990      Insurance Company                 NaN   
+9991      Insurance Company                 NaN   
+9992               Self-Pay                 NaN   
+9993               Medicare                 NaN   
+9994                    NaN                 NaN   
+9995               Self-Pay                 NaN   
+9996               Self-Pay                 NaN   
+9997               Self-Pay                 NaN   
+9998      Insurance Company                 NaN   
+9999               Self-Pay                 NaN   
+
+     Attending Provider License Number Operating Provider License Number  \
+0                               263087                               NaN   
+1                               237382                            237382   
+2                               222416                               NaN   
+3                                 3814                            205269   
+4                               261103                               NaN   
+5                               265285                               NaN   
+6                               265038                               NaN   
+7                               253982                            228744   
+8                               146395                               NaN   
+9                               236885                               NaN   
+10                              253378                               NaN   
+11                              204436                               NaN   
+12                              236885                            147471   
+13                              264898                               NaN   
+14                                3623                               NaN   
+15                              248788                               NaN   
+16                              252582                               NaN   
+17                              216951                            216951   
+18                                3623                            260692   
+19                              170254                            170254   
+20                                3774                              3774   
+21                              263087                               NaN   
+22                                3774                            135402   
+23                              259048                               NaN   
+24                              194958                            242380   
+25                              236885                               NaN   
+26                              200271                            237006   
+27                              218155                            216772   
+28                              216951                               NaN   
+29                              265285                            258924   
+...                                ...                               ...   
+9970                            218373                            218373   
+9971                            211403                            211403   
+9972                            196510                               NaN   
+9973                            260591                               NaN   
+9974                            181109                            181109   
+9975                            250729                            250729   
+9976                            178890                               NaN   
+9977                            260591                               NaN   
+9978                            178890                               NaN   
+9979                            260591                            260591   
+9980                            260591                               NaN   
+9981                            243860                               NaN   
+9982                            262066                               NaN   
+9983                            151614                               NaN   
+9984                            262066                            153771   
+9985                            153771                               NaN   
+9986                            153771                               NaN   
+9987                            151614                               NaN   
+9988                            151614                            202336   
+9989                            262066                               NaN   
+9990                            249990                               NaN   
+9991                            153771                            171866   
+9992                            249990                            178316   
+9993                            249990                               NaN   
+9994                            151614                               NaN   
+9995                            252316                               NaN   
+9996                            151614                               NaN   
+9997                            258271                            258271   
+9998                            171192                               NaN   
+9999                            171192                            178316   
+
+      Other Provider License Number Birth Weight  Abortion Edit Indicator  \
+0                               NaN            0                        N   
+1                               NaN            0                        N   
+2                               NaN            0                        N   
+3                               NaN            0                        N   
+4                               NaN            0                        N   
+5                               NaN            0                        N   
+6                               NaN            0                        N   
+7                               NaN            0                        N   
+8                               NaN            0                        N   
+9                               NaN            0                        N   
+10                              NaN            0                        N   
+11                              NaN            0                        N   
+12                              NaN            0                        N   
+13                              NaN            0                        N   
+14                              NaN            0                        N   
+15                              NaN            0                        N   
+16                              NaN            0                        N   
+17                              NaN            0                        N   
+18                              NaN            0                        N   
+19                              NaN            0                        N   
+20                              NaN            0                        N   
+21                              NaN            0                        N   
+22                              NaN            0                        N   
+23                              NaN            0                        N   
+24                              NaN            0                        N   
+25                              NaN            0                        N   
+26                              NaN            0                        N   
+27                              NaN            0                        N   
+28                              NaN            0                        N   
+29                              NaN            0                        N   
+...                             ...          ...                      ...   
+9970                            NaN            0                        N   
+9971                            NaN            0                        N   
+9972                            NaN            0                        N   
+9973                            NaN            0                        N   
+9974                            NaN            0                        N   
+9975                            NaN            0                        N   
+9976                         250729            0                        N   
+9977                            NaN            0                        N   
+9978                            NaN            0                        N   
+9979                         157471            0                        N   
+9980                            NaN            0                        N   
+9981                            NaN            0                        N   
+9982                            NaN            0                        N   
+9983                            NaN            0                        N   
+9984                            NaN            0                        N   
+9985                            NaN            0                        N   
+9986                         244514            0                        N   
+9987                         177443            0                        N   
+9988                         153671            0                        N   
+9989                            NaN            0                        N   
+9990                         234124            0                        N   
+9991                         172789            0                        N   
+9992                         222906            0                        N   
+9993                         142060            0                        N   
+9994                            NaN            0                        N   
+9995                         208550            0                        N   
+9996                         172789            0                        N   
+9997                         258271            0                        N   
+9998                            NaN            0                        N   
+9999                            NaN            0                        N   
+
+     Emergency Department Indicator  Total Charges  
+0                                 Y       62328.96  
+1                                 Y       30063.34  
+2                                 Y       14315.22  
+3                                 Y       32244.05  
+4                                 Y       28109.18  
+5                                 Y       21159.98  
+6                                 Y        8800.68  
+7                                 Y       71088.71  
+8                                 Y       18795.74  
+9                                 Y        5931.00  
+10                                Y       29129.62  
+11                                Y       41506.95  
+12                                Y       42735.52  
+13                                Y       12221.78  
+14                                Y       12417.50  
+15                                Y       18519.71  
+16                                Y       25445.40  
+17                                Y       37624.47  
+18                                Y       26166.66  
+19                                Y       54876.95  
+20                                Y       49091.48  
+21                                Y       31718.42  
+22                                Y      137673.37  
+23                                Y       17304.63  
+24                                Y       26631.91  
+25                                Y       14764.46  
+26                                Y       31116.11  
+27                                Y       44902.41  
+28                                Y       48036.38  
+29                                Y       17321.10  
+...                             ...            ...  
+9970                              Y       11929.88  
+9971                              Y        6929.94  
+9972                              N        2915.51  
+9973                              N        4327.66  
+9974                              N        6682.82  
+9975                              N        4439.98  
+9976                              Y       10109.62  
+9977                              Y        4576.64  
+9978                              N        1279.01  
+9979                              N        8947.41  
+9980                              Y        6621.28  
+9981                              Y       12446.00  
+9982                              Y        7948.50  
+9983                              Y       11899.75  
+9984                              Y       16784.75  
+9985                              N       16147.25  
+9986                              Y        4430.25  
+9987                              Y        7625.00  
+9988                              Y       27442.00  
+9989                              Y        8311.00  
+9990                              Y        6299.25  
+9991                              Y       10041.75  
+9992                              Y       15825.75  
+9993                              Y        8662.50  
+9994                              Y        4422.00  
+9995                              N        8134.25  
+9996                              Y       18369.50  
+9997                              N        1895.25  
+9998                              Y       10532.75  
+9999                              Y       11569.50  
+
+[10000 rows x 39 columns]

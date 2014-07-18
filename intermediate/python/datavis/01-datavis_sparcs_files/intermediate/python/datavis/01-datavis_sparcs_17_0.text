@@ -1,0 +1,10 @@
+Hospital County  Facility Name                                 
+Albany           Albany Medical Center Hospital                    4
+Erie             Women And Children's Hospital Of Buffalo          2
+Monroe           Strong Memorial Hospital                          1
+Nassau           Mercy Medical Center                              1
+                 North Shore University Hospital                   2
+                 Winthrop-University Hospital                      1
+Onondaga         University Hospital SUNY Health Science Center    1
+Suffolk          University Hospital                               3
+dtype: int64

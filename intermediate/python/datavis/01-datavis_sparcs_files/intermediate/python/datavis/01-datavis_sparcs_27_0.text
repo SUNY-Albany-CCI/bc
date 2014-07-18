@@ -1,0 +1,6 @@
+Patient Disposition
+Expired                          1
+Home or Self Care               10
+Home w/ Home Health Services     3
+Short-term Hospital              1
+dtype: int64

@@ -1,0 +1,41 @@
+   Facility Id                   Hospital Name  \
+0            0  New York State - All Hospitals   
+1            0  New York State - All Hospitals   
+2            0  New York State - All Hospitals   
+3            0  New York State - All Hospitals   
+4            0  New York State - All Hospitals   
+
+                             Indicator Name  Year  Infections observed  \
+0  SSI Overall Standardized Infection Ratio  2012                 1618   
+1                        CDI Hospital Onset  2012                 9904   
+2                 CLABSI Cardiothoracic ICU  2012                   67   
+3                       CLABSI Coronary ICU  2012                   60   
+4                        CLABSI Medical ICU  2012                  130   
+
+   Infections predicted  Denominator  Indicator value  \
+0                   NaN          NaN             1.00   
+1                   NaN     11948043             8.29   
+2                   NaN        75757             0.88   
+3                   NaN        48540             1.24   
+4                   NaN       107618             1.21   
+
+   Indicator Lower confidence limit  Indicator Upper confidence limit  \
+0                               NaN                               NaN   
+1                               NaN                               NaN   
+2                               NaN                               NaN   
+3                               NaN                               NaN   
+4                               NaN                               NaN   
+
+                                     Indicator units Comparison results  \
+0                                                NaN                NaN   
+1  # hospital onset cases per 10,000 patient days...                NaN   
+2                        # CLABSI per 1000 line days                NaN   
+3                        # CLABSI per 1000 line days                NaN   
+4                        # CLABSI per 1000 line days                NaN   
+
+  Location 1  
+0        NaN  
+1        NaN  
+2        NaN  
+3        NaN  
+4        NaN  

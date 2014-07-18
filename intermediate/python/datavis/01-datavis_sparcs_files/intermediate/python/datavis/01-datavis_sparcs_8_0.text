@@ -1,0 +1,33 @@
+Hospital County  Type of Admission
+Albany           Elective             163
+                 Emergency            359
+                 Newborn               44
+                 Urgent                51
+Allegheny        Elective               2
+                 Emergency             12
+                 Newborn                2
+                 Urgent                 5
+Broome           Elective              72
+                 Emergency            172
+                 Newborn               26
+                 Urgent                29
+Cattaraugus      Elective              18
+                 Emergency             30
+                 Newborn               10
+...
+Schoharie        Emergency              4
+Schuyler         Elective               2
+                 Emergency              7
+St Lawrence      Elective              16
+                 Emergency             66
+                 Newborn               15
+                 Not Available          1
+                 Urgent                25
+Steuben          Elective               1
+                 Emergency             17
+                 Urgent                 1
+Suffolk          Elective              44
+                 Emergency            199
+                 Newborn               35
+                 Urgent                70
+Length: 162, dtype: int64

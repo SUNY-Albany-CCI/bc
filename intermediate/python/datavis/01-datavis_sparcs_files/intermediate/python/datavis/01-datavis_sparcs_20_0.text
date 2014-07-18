@@ -1,0 +1,271 @@
+      Unnamed: 0 Hospital Service Area Hospital County  \
+174        17401        Capital/Adiron          Albany   
+178        17801        Capital/Adiron          Albany   
+190        19001        Capital/Adiron          Albany   
+275        27501        Capital/Adiron          Albany   
+2184      218401            Western NY            Erie   
+2219      221901            Western NY            Erie   
+3090      309001           Long Island         Suffolk   
+3093      309301           Long Island         Suffolk   
+3186      318601           Long Island         Suffolk   
+4310      431001          Finger Lakes          Monroe   
+5098      509801           Long Island          Nassau   
+5485      548501           Long Island          Nassau   
+6489      648901           Long Island          Nassau   
+6515      651501           Long Island          Nassau   
+7905      790501            Central NY        Onondaga   
+
+      Operating Certificate Number  Facility Id  \
+174                         101000            1   
+178                         101000            1   
+190                         101000            1   
+275                         101000            1   
+2184                       1401014          208   
+2219                       1401014          208   
+3090                       5151001          245   
+3093                       5151001          245   
+3186                       5151001          245   
+4310                       2701005          413   
+5098                       2908000          511   
+5485                       2909000          513   
+6489                       2951001          541   
+6515                       2951001          541   
+7905                       3301007          635   
+
+                                       Facility Name Age Group  \
+174                   Albany Medical Center Hospital   0 to 17   
+178                   Albany Medical Center Hospital   0 to 17   
+190                   Albany Medical Center Hospital   0 to 17   
+275                   Albany Medical Center Hospital   0 to 17   
+2184        Women And Children's Hospital Of Buffalo   0 to 17   
+2219        Women And Children's Hospital Of Buffalo   0 to 17   
+3090                             University Hospital   0 to 17   
+3093                             University Hospital   0 to 17   
+3186                             University Hospital   0 to 17   
+4310                        Strong Memorial Hospital   0 to 17   
+5098                    Winthrop-University Hospital   0 to 17   
+5485                            Mercy Medical Center   0 to 17   
+6489                 North Shore University Hospital   0 to 17   
+6515                 North Shore University Hospital   0 to 17   
+7905  University Hospital SUNY Health Science Center   0 to 17   
+
+     Zip Code - 3 digits Gender                    Race          Ethnicity  \
+174                  128      F                   White  Not Span/Hispanic   
+178                  OOS      M                   White  Not Span/Hispanic   
+190                  123      M                   White  Not Span/Hispanic   
+275                  122      F                   White  Not Span/Hispanic   
+2184                 143      M              Other Race  Not Span/Hispanic   
+2219                 140      M                   White  Not Span/Hispanic   
+3090                 119      F              Other Race  Not Span/Hispanic   
+3093                 117      M              Other Race  Not Span/Hispanic   
+3186                 117      M                   White  Not Span/Hispanic   
+4310                 146      M  Black/African American   Spanish/Hispanic   
+5098                 118      M                   White  Not Span/Hispanic   
+5485                 114      M              Other Race   Spanish/Hispanic   
+6489                 113      M                   White   Spanish/Hispanic   
+6515                 114      M                   White  Not Span/Hispanic   
+7905                 130      M                   White  Not Span/Hispanic   
+
+     Length of Stay Admit Day of Week Type of Admission  \
+174              24               TUE          Elective   
+178              40               SUN           Newborn   
+190              48               TUE           Newborn   
+275              69               FRI           Newborn   
+2184             29               FRI         Emergency   
+2219             12               WED         Emergency   
+3090             31               MON           Newborn   
+3093              5               MON            Urgent   
+3186             11               SAT         Emergency   
+4310             10               TUE         Emergency   
+5098             46               TUE           Newborn   
+5485             41               WED           Newborn   
+6489             13               MON           Newborn   
+6515             12               FRI           Newborn   
+7905              5               WED          Elective   
+
+               Patient Disposition  Discharge Year Discharge Day of Week  \
+174              Home or Self Care            2012                   FRI   
+178   Home w/ Home Health Services            2012                   FRI   
+190              Home or Self Care            2012                   MON   
+275                        Expired            2012                   THU   
+2184  Home w/ Home Health Services            2012                   SAT   
+2219             Home or Self Care            2012                   MON   
+3090           Short-term Hospital            2012                   THU   
+3093             Home or Self Care            2012                   SAT   
+3186             Home or Self Care            2012                   WED   
+4310             Home or Self Care            2012                   FRI   
+5098             Home or Self Care            2012                   SAT   
+5485             Home or Self Care            2012                   TUE   
+6489             Home or Self Care            2012                   SUN   
+6515             Home or Self Care            2012                   WED   
+7905  Home w/ Home Health Services            2012                   MON   
+
+      CCS Diagnosis Code CCS Diagnosis Description  CCS Procedure Code  \
+174                  237   DEVICE/IMPLNT/GRFT COMP                   4   
+178                  218                  LIVEBORN                  99   
+190                  218                  LIVEBORN                 216   
+275                  218                  LIVEBORN                  61   
+2184                 202      RHEUMATOID ARTHRITIS                  65   
+2219                 236    OPEN WOUND EXTREMITIES                 157   
+3090                 218                  LIVEBORN                 216   
+3093                  99      HYPERTENSION W/COMPL                 105   
+3186                 237   DEVICE/IMPLNT/GRFT COMP                 148   
+4310                  99      HYPERTENSION W/COMPL                 105   
+5098                 218                  LIVEBORN                 216   
+5485                 218                  LIVEBORN                 216   
+6489                 218                  LIVEBORN                 216   
+6515                 218                  LIVEBORN                 231   
+7905                 212        OTHER BONE DISEASE                 158   
+
+     CCS Procedure Description  APR DRG Code  \
+174      DIAGNOSTIC SPINAL TAP           721   
+178         OT OR GI THER PRCS           609   
+190     RESP INTUB/MECH VENTIL           607   
+275    OT OR PRCS VES NOT HEAD           588   
+2184        BONE MARROW BIOPSY           346   
+2219   AMPUTATE LOWER EXTRMITY           305   
+3090    RESP INTUB/MECH VENTIL           591   
+3093         KIDNEY TRANSPLANT           440   
+3186    OT FRACTURE/DISLOC PRC           317   
+4310         KIDNEY TRANSPLANT           440   
+5098    RESP INTUB/MECH VENTIL           611   
+5485    RESP INTUB/MECH VENTIL           612   
+6489    RESP INTUB/MECH VENTIL           621   
+6515    OTHER THERAPEUTIC PRCS           614   
+7905             SPINAL FUSION           303   
+
+                                    APR DRG Description  APR MDC Code  \
+174   POST-OPERATIVE, POST-TRAUMATIC, OTHER DEVICE I...            18   
+178            NEONATE BWT 1500-2499G W MAJOR PROCEDURE            15   
+190   NEONATE BWT 1250-1499G W RESP DIST SYND/OTH MA...            15   
+275                NEONATE BWT <1500G W MAJOR PROCEDURE            15   
+2184                        CONNECTIVE TISSUE DISORDERS             8   
+2219               AMPUTATION OF LOWER LIMB EXCEPT TOES             8   
+3090       NEONATE BIRTHWT 500-749G W/O MAJOR PROCEDURE            15   
+3093                                  KIDNEY TRANSPLANT            11   
+3186      TENDON, MUSCLE & OTHER SOFT TISSUE PROCEDURES             8   
+4310                                  KIDNEY TRANSPLANT            11   
+5098         NEONATE BIRTHWT 1500-1999G W MAJOR ANOMALY            15   
+5485  NEONATE BWT 1500-1999G W RESP DIST SYND/OTH MA...            15   
+6489             NEONATE BWT 2000-2499G W MAJOR ANOMALY            15   
+6515  NEONATE BWT 1500-1999G W OR W/O OTHER SIGNIFIC...            15   
+7905  DORSAL & LUMBAR FUSION PROC FOR CURVATURE OF BACK             8   
+
+                                    APR MDC Description  \
+174   Infectious and Parasitic Diseases, Systemic or...   
+178   Newborns and Other Neonates with Conditions Or...   
+190   Newborns and Other Neonates with Conditions Or...   
+275   Newborns and Other Neonates with Conditions Or...   
+2184  Diseases and Disorders of the Musculoskeletal ...   
+2219  Diseases and Disorders of the Musculoskeletal ...   
+3090  Newborns and Other Neonates with Conditions Or...   
+3093  Diseases and Disorders of the Kidney and Urina...   
+3186  Diseases and Disorders of the Musculoskeletal ...   
+4310  Diseases and Disorders of the Kidney and Urina...   
+5098  Newborns and Other Neonates with Conditions Or...   
+5485  Newborns and Other Neonates with Conditions Or...   
+6489  Newborns and Other Neonates with Conditions Or...   
+6515  Newborns and Other Neonates with Conditions Or...   
+7905  Diseases and Disorders of the Musculoskeletal ...   
+
+      APR Severity of Illness Code APR Severity of Illness Description  \
+174                              4                             Extreme   
+178                              3                               Major   
+190                              3                               Major   
+275                              4                             Extreme   
+2184                             3                               Major   
+2219                             4                             Extreme   
+3090                             4                             Extreme   
+3093                             1                               Minor   
+3186                             2                            Moderate   
+4310                             3                               Major   
+5098                             3                               Major   
+5485                             4                             Extreme   
+6489                             2                            Moderate   
+6515                             2                            Moderate   
+7905                             3                               Major   
+
+     APR Risk of Mortality APR Medical Surgical Description  \
+174                  Major                          Medical   
+178                  Major                         Surgical   
+190                  Minor                          Medical   
+275                Extreme                         Surgical   
+2184              Moderate                          Medical   
+2219                 Major                         Surgical   
+3090               Extreme                          Medical   
+3093              Moderate                         Surgical   
+3186                 Minor                         Surgical   
+4310              Moderate                         Surgical   
+5098              Moderate                          Medical   
+5485                 Major                          Medical   
+6489              Moderate                          Medical   
+6515                 Minor                          Medical   
+7905                 Minor                         Surgical   
+
+     Source of Payment 1 Source of Payment 2 Source of Payment 3  \
+174           Blue Cross            Self-Pay                 NaN   
+178             Medicaid            Self-Pay                 NaN   
+190    Insurance Company            Medicaid             Unknown   
+275    Insurance Company            Self-Pay                 NaN   
+2184   Insurance Company            Self-Pay                 NaN   
+2219   Insurance Company            Self-Pay                 NaN   
+3090            Self-Pay                 NaN                 NaN   
+3093            Self-Pay            Medicare            Medicaid   
+3186          Blue Cross                 NaN                 NaN   
+4310            Medicaid            Medicaid                 NaN   
+5098          Blue Cross                 NaN                 NaN   
+5485            Medicaid            Medicaid                 NaN   
+6489          Blue Cross                 NaN                 NaN   
+6515          Blue Cross                 NaN                 NaN   
+7905   Insurance Company            Medicaid                 NaN   
+
+      Attending Provider License Number  Operating Provider License Number  \
+174                              162491                             208542   
+178                              164357                             223982   
+190                              194643                             213633   
+275                              164357                             218128   
+2184                             234304                             230423   
+2219                           40003893                             127609   
+3090                             122627                             122627   
+3093                             251662                             251662   
+3186                             206630                             206630   
+4310                             253366                             253366   
+5098                             169592                             236597   
+5485                             203584                             203584   
+6489                             241931                             241931   
+6515                             224893                             224893   
+7905                             146522                             146522   
+
+      Other Provider License Number  Birth Weight Abortion Edit Indicator  \
+174                          208542             0                       N   
+178                          259973          1600                       N   
+190                             NaN          1300                       N   
+275                             NaN           400                       N   
+2184                         240148             0                       N   
+2219                       40003893             0                       N   
+3090                            NaN           600                       N   
+3093                            NaN             0                       N   
+3186                            NaN             0                       N   
+4310                            NaN             0                       N   
+5098                            NaN          1800                       N   
+5485                            NaN          1500                       N   
+6489                            NaN          2000                       N   
+6515                            NaN          1600                       N   
+7905                            NaN             0                       N   
+
+     Emergency Department Indicator  Total Charges  
+174                               N      207005.55  
+178                               N      316424.16  
+190                               N      332675.61  
+275                               N      721063.83  
+2184                              Y      117743.94  
+2219                              Y      102515.84  
+3090                              N      348198.51  
+3093                              N      128280.24  
+3186                              Y      108848.35  
+4310                              Y      123752.72  
+5098                              N      209036.82  
+5485                              N      201611.00  
+6489                              N      140611.34  
+6515                              N      121050.56  
+7905                              N      145412.15  

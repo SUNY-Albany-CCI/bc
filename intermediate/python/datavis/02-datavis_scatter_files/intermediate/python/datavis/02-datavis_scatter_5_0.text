@@ -1,0 +1,1 @@
+Index([u'County Name', u'County Code', u'Region Name', u'Indicator Number', u'Indicator', u'Total Event Counts', u'Denominator', u'Denominator Note', u'Measure Unit', u'Percentage/Rate', u'95% CI', u'Data Comments', u'Data Years', u'Data Sources', u'Quartile', u'Mapping Distribution', u'Location'], dtype='object')
