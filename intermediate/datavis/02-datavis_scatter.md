@@ -20,6 +20,7 @@ root: ../..
 <pre>%matplotlib inline
 from matplotlib import pylab as plt
 import pandas as pd
+import numpy as np
 df = pd.read_csv(&#34;indicators.csv&#34;)</pre>
 </div>
 
@@ -162,22 +163,22 @@ diabetes_hospitalization_rate=df_diabetes_hospitalization[&#39;Percentage/Rate&#
 
 
 <div class="in">
-<pre>plt.scatter(obesity_count, cardiac_count)</pre>
+<pre>plt.scatter(obesity_rate, cardiac_rate)</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.collections.PathCollection at 0x39b99d0&gt;
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fb54303e090&gt;
 <img src="../../intermediate/datavis/02-datavis_scatter_files/intermediate/datavis/02-datavis_scatter_18_1.png">
 </pre>
 </div>
 
 
 <div class="in">
-<pre>plt.scatter(obesity_count, diabetes_hospitalization_rate)</pre>
+<pre>plt.scatter(obesity_rate, diabetes_hospitalization_rate)</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.collections.PathCollection at 0x3c7b690&gt;
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fb542fa5950&gt;
 <img src="../../intermediate/datavis/02-datavis_scatter_files/intermediate/datavis/02-datavis_scatter_19_1.png">
 </pre>
 </div>
@@ -188,7 +189,7 @@ diabetes_hospitalization_rate=df_diabetes_hospitalization[&#39;Percentage/Rate&#
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.collections.PathCollection at 0x41bed10&gt;
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fb542ecc1d0&gt;
 <img src="../../intermediate/datavis/02-datavis_scatter_files/intermediate/datavis/02-datavis_scatter_20_1.png">
 </pre>
 </div>
@@ -196,4 +197,26 @@ diabetes_hospitalization_rate=df_diabetes_hospitalization[&#39;Percentage/Rate&#
 
 <div>
 
+</div>
+
+
+<div>
+<p>We can compare all three using a bubble chart. Note we change the range of obesity from apr. 11 to 15, to 1 to 5. This is done so that we get a better range for the bubbles</p>
+</div>
+
+
+<div class="in">
+<pre>obesity_array=np.array(obesity_rate.tolist())
+obesity_array_no_nan= obesity_array[~np.isnan(obesity_array)]
+min=obesity_array_no_nan.min()
+obesity_array_for_bubble=(obesity_array-min+1)*10
+
+
+plt.scatter(cardiac_rate, diabetes_hospitalization_rate, s=obesity_array_for_bubble, marker=&#39;o&#39;, c=obesity_array_for_bubble)</pre>
+</div>
+
+<div class="out">
+<pre>&lt;matplotlib.collections.PathCollection at 0x7fb542b5ff50&gt;
+<img src="../../intermediate/datavis/02-datavis_scatter_files/intermediate/datavis/02-datavis_scatter_23_1.png">
+</pre>
 </div>

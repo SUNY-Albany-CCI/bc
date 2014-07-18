@@ -20,6 +20,12 @@ import pandas as pd
 df = pd.read_csv(&#34;Hospital-Acquired_Infections__Beginning_2008.csv&#34;)</pre>
 </div>
 
+<div class="out">
+<pre>/usr/local/lib/python2.7/dist-packages/pandas/io/excel.py:626: UserWarning: Installed openpyxl is not supported at this time. Use &gt;=1.6.1 and &lt;2.0.0.
+  .format(openpyxl_compat.start_ver, openpyxl_compat.stop_ver))
+</pre>
+</div>
+
 
 <div class="in">
 <pre>df.columns</pre>
@@ -588,7 +594,7 @@ plt.legend( (p1[0], p2[0]), (&#39;Albany&#39;, &#39;Brooklyn&#39;) )
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x5096a90&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x7fdbeb395cd0&gt;
 <img src="../../intermediate/datavis/03-datavis_infections_files/intermediate/datavis/03-datavis_infections_15_1.png">
 </pre>
 </div>
@@ -629,7 +635,7 @@ plt.legend( (p1[0], p2[0]), (&#39;Albany&#39;, &#39;Brooklyn&#39;) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x47b0ad0&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x7fdbeb2ebf50&gt;
 <img src="../../intermediate/datavis/03-datavis_infections_files/intermediate/datavis/03-datavis_infections_20_1.png">
 </pre>
 </div>
