@@ -24,6 +24,12 @@ from operator import itemgetter
 %matplotlib inline </pre>
 </div>
 
+<div class="out">
+<pre>/usr/local/lib/python2.7/dist-packages/pandas/io/excel.py:626: UserWarning: Installed openpyxl is not supported at this time. Use &gt;=1.6.1 and &lt;2.0.0.
+  .format(openpyxl_compat.start_ver, openpyxl_compat.stop_ver))
+</pre>
+</div>
+
 
 <div class="in">
 <pre># try reading with pandas... This seems to raise an error...
@@ -39,7 +45,7 @@ from operator import itemgetter
 <div class="in">
 <pre>def get_drug_data(drugname):
     # form a request
-    request_string=&#39;http://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:&#39;+drugname+&#39;+AND+receivedate:[2012-01-01+TO+2012-12-31]&amp;count=patient.reaction.reactionmeddrapt.exact&#39;
+    request_string=&#39;http://api.fda.gov/drug/event.json?search=patient.drug.medicinalproduct:&#39;+drugname+&#39;&amp;count=patient.reaction.reactionmeddrapt.exact&#39;
     
     request=ulib.Request(request_string)
 
@@ -82,8 +88,8 @@ druglist2=get_drug_data(drugname2)
 symptom1=&#39;NAUSEA&#39;
 symptom2=&#39;ANXIETY&#39;
 
-aspirin_list=[get_symptom_count(drug1, symptom1), get_symptom_count(druglist1, symptom2)]
-paxil_list=[get_symptom_count(drug2, symptom1), get_symptom_count(druglist2, symptom2)]
+aspirin_list=[get_symptom_count(druglist1, symptom1), get_symptom_count(druglist1, symptom2)]
+paxil_list=[get_symptom_count(druglist2, symptom1), get_symptom_count(druglist2, symptom2)]
 
 </pre>
 </div>
@@ -118,8 +124,8 @@ plt.show()</pre>
 </div>
 
 <div class="out">
-<pre>[1451, 739]
-[194, 202]
+<pre>[8382, 3267]
+[2897, 2605]
 
 <img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_10_1.png">
 </pre>
@@ -138,8 +144,8 @@ count1=[]
 count2=[]
 
 for symptom in symptoms:
-    count1.append(get_symptom_count(drug1, symptom))
-    count2.append(get_symptom_count(drug2, symptom))
+    count1.append(get_symptom_count(druglist1, symptom))
+    count2.append(get_symptom_count(druglist2, symptom))
     
 ind=np.arange(len(count1))
                   
