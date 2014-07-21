@@ -18,6 +18,10 @@ root: ../..
 <li>In this example we will create a table of embedded charts to compare side effects between many drugs</li>
 <li>We use a variable width column chart to compare side effects between a few drugs (4 or 5)</li>
 </ul>
+<p>Many categories, many items</p>
+<ul>
+<li>In this example we will use a 3D bar chart to compare many side effects between many drugs</li>
+</ul>
 </div>
 
 
