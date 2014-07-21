@@ -77,7 +77,7 @@ root: ../..
 <div class="">
 <p>The expression <code>numpy.loadtxt(...)</code> is a <a href="../../gloss.html#function-call">function call</a> that asks Python to run the function <code>loadtxt</code> that belongs to the <code>numpy</code> library. This <a href="../../gloss.html#dotted-notation">dotted notation</a> is used everywhere in Python to refer to the parts of things as <code>whole.part</code>.</p>
 <p><code>numpy.loadtxt</code> has two <a href="../../gloss.html#parameter">parameters</a>: the name of the file we want to read, and the <a href="../../gloss.html#delimiter">delimiter</a> that separates values on a line. These both need to be character strings (or <a href="../../gloss.html#string">strings</a> for short), so we put them in quotes.</p>
-<p>When we are finished typing and press Shift+Enter, the notebook runs our command. Since we haven't told it to do anything else with the function's output, the notebook displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with <code>...</code> displayed to mark missing data). To save space, Python displays numbers as <code>1.</code> instead of <code>1.0</code> when there's nothing interesting after the decimal point.</p>
+<p>When we are finished typing and press Shift+Enter, the notebook runs our command. Since we haven't told it to do anything else with the function's output, the notebook displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with <code>...</code> to omit elements when displaying big arrays). To save space, Python displays numbers as <code>1.</code> instead of <code>1.0</code> when there's nothing interesting after the decimal point.</p>
 </div>
 
 
