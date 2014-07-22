@@ -44,7 +44,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from operator import itemgetter
 
-%matplotlib inline  </pre>
+
+
+%matplotlib inline   </pre>
 </div>
 
 
