@@ -7,7 +7,8 @@ root: ../..
 
 
 <div>
-<p>This example shows how to show a composition for data that is changing over time when there are only a small number of time periods. The example uses yearly data on hospital acquired infections. Data from two hospitals is compared over 3 years.</p>
+<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created. - <strong>A Stacked Column Chart to show relative and absolute differences.</strong> - <strong>A 100% Stacked Column Chart to show relative differences.</strong></p>
+<p>The example uses yearly data on hospital acquired infections. Data from two hospitals is compared over 3 years.</p>
 </div>
 
 
@@ -225,13 +226,24 @@ infections2=hospitalData2[hospitalData2[&#39;Indicator Name&#39;]==indicator]</p
 
 
 <div>
+<p>Define colors for the plots.</p>
+</div>
+
+
+<div class="in">
+<pre>color1=&#39;#d71f26&#39;
+color2=&#39;#874c9d&#39;</pre>
+</div>
+
+
+<div>
 <p>Now we can use a stacked collumn chart to Create a stacked collumn chart based on this example (http://matplotlib.org/examples/pylab_examples/bar_stacked.html)</p>
 </div>
 
 
 <div class="in">
-<pre>p1=plt.bar([1,2,3], infections1[&#39;Infections observed&#39;], 1, color=&#39;r&#39;)
-p2=plt.bar([1,2,3], infections2[&#39;Infections observed&#39;], 1, color=&#39;b&#39;, bottom=infections1[&#39;Infections observed&#39;])
+<pre>p1=plt.bar([1,2,3], infections1[&#39;Infections observed&#39;], 1, color=color1)
+p2=plt.bar([1,2,3], infections2[&#39;Infections observed&#39;], 1, color=color2, bottom=infections1[&#39;Infections observed&#39;])
 
 plt.ylabel(&#39;infections&#39;)
 plt.title(indicator+&#39;infections&#39;)
@@ -242,9 +254,14 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x49de8d0&gt;
-<img src="../../intermediate/datavis/03-datavis_infections_files/intermediate/datavis/03-datavis_infections_20_1.png">
+<pre>&lt;matplotlib.legend.Legend at 0x5b68ed0&gt;
+<img src="../../intermediate/datavis/03-datavis_infections_files/intermediate/datavis/03-datavis_infections_22_1.png">
 </pre>
+</div>
+
+
+<div class="in">
+<pre></pre>
 </div>
 
 
@@ -285,8 +302,8 @@ print array2_normal</pre>
 
 
 <div class="in">
-<pre>p1=plt.bar([1,2,3], array1_normal, 1, color=&#39;r&#39;)
-p2=plt.bar([1,2,3], array2_normal, 1, color=&#39;b&#39;, bottom=array1_normal)
+<pre>p1=plt.bar([1,2,3], array1_normal, 1, color=color1)
+p2=plt.bar([1,2,3], array2_normal, 1, color=color2, bottom=array1_normal)
 
 plt.ylabel(&#39;infections&#39;)
 plt.title(&#39;hospital infections&#39;)
@@ -296,17 +313,7 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x4d0fed0&gt;
-<img src="../../intermediate/datavis/03-datavis_infections_files/intermediate/datavis/03-datavis_infections_26_1.png">
+<pre>&lt;matplotlib.legend.Legend at 0x5ba4050&gt;
+<img src="../../intermediate/datavis/03-datavis_infections_files/intermediate/datavis/03-datavis_infections_29_1.png">
 </pre>
-</div>
-
-
-<div class="in">
-<pre></pre>
-</div>
-
-
-<div class="in">
-<pre></pre>
 </div>

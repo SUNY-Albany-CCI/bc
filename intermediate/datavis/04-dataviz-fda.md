@@ -10,17 +10,17 @@ root: ../..
 <p>In this example we use the openFDA API to get information about drug side effects. We want to compare side effects between different drugs. We will show 4 different graphs.</p>
 <p>Few categories (compare 2 or 3 drugs)</p>
 <ul>
-<li>Few items (compare 3 drugs for 2 side effects) create a column chart</li>
-<li>Many items (compare 2 drugs for many side effects) create a bar chart</li>
+<li><strong>Few items (compare 3 drugs for 2 side effects) create a column chart</strong></li>
+<li><strong>Many items (compare 2 drugs for many side effects) create a bar chart</strong></li>
 </ul>
 <p>Many categories</p>
 <ul>
-<li>In this example we will create a table of embedded charts to compare side effects between many drugs</li>
-<li>We use a variable width column chart to compare side effects between a few drugs (4 or 5)</li>
+<li><strong>In this example we will create a table of embedded charts to compare side effects between many drugs</strong></li>
+<li><strong>We use a variable width column chart to compare side effects between a few drugs (4 or 5)</strong></li>
 </ul>
 <p>Many categories, many items</p>
 <ul>
-<li>In this example we will use a 3D bar chart to compare many side effects between many drugs</li>
+<li><strong>In this example we will use a 3D bar chart to compare many side effects between many drugs</strong></li>
 </ul>
 </div>
 
@@ -147,7 +147,7 @@ results
 <div class="in">
 <pre>fda_list=fda_data[&#39;results&#39;]
 
-for x in range(0, min(10, len(fda_list))):
+for x in range(0, min(15, len(fda_list))):
     entry=fda_list[x]
     print &#39;term: &#39;+str(entry[&#39;term&#39;])+&#34; count &#34;+str(entry[&#39;count&#39;])
     
@@ -165,6 +165,11 @@ term: MYOCARDIAL INFARCTION count 5742
 term: DIARRHOEA count 5736
 term: PRURITUS count 5540
 term: HEADACHE count 5429
+term: CHEST PAIN count 5172
+term: DRUG INEFFECTIVE count 5136
+term: VOMITING count 5134
+term: PAIN count 5078
+term: FALL count 4941
 </pre>
 </div>
 
@@ -250,12 +255,15 @@ print paxil_list</pre>
 
 
 <div class="in">
-<pre>ind=np.asarray([1,2])
+<pre>color1=&#39;#d71f26&#39;
+color2=&#39;#874c9d&#39;
+
+ind=np.asarray([1,2])
 width = 0.35 
 fig, ax = plt.subplots()
 
-rects1 = plt.bar(ind, aspirin_list, width, color=&#39;r&#39;)
-rects2 = plt.bar(ind+width, paxil_list, width, color=&#39;b&#39;)
+rects1 = plt.bar(ind, aspirin_list, width, color=color1)
+rects2 = plt.bar(ind+width, paxil_list, width, color=color2)
 
 ax.set_ylabel(&#39;Event Counts&#39;)
 ax.set_title(&#39;Event counts by drug type&#39;)
@@ -276,12 +284,14 @@ plt.show()</pre>
 
 
 <div>
-<p>This example shows a plot that compares 2 drugs for many side effects.</p>
+<p>When we have only a couple of categories but many items per category a horizontal bar plot can be useful. This example shows a plot that compares 2 drugs for many side effects.</p>
 </div>
 
 
 <div class="in">
-<pre>events=[&#39;FLUSHING&#39;, &#39;DYSPNOEA&#39;, &#39;FATIGUE&#39;, &#39;NAUSEA&#39;, &#39;PAIN&#39;, &#39;DIZZINESS&#39;]
+<pre>events=[&#39;FLUSHING&#39;, &#39;DYSPNOEA&#39;, &#39;FATIGUE&#39;, &#39;NAUSEA&#39;, &#39;PAIN&#39;, &#39;DIZZINESS&#39;, &#39;ASTHENIA&#39;, &#39;MYOCARDIAL INFARCTION&#39;, &#39;DIARRHOEA&#39;, &#39;PRURITUS&#39;, &#39;HEADACHE&#39;, &#39;CHEST PAIN&#39;, &#39;DRUG INEFFECTIVE&#39;, &#39;VOMITING&#39;]
+
+#DYSPNOEA, DIZZINESS, FATIGUE, ASTHENIA, MYOCARDIAL INFARCTION, DIARRHOEA, PRURITUS, HEADACHE, CHEST PAIN, DRUG INEFFECTIVE, VOMITING, PAIN, FALL
 
 count1=[]
 count2=[]
@@ -292,19 +302,19 @@ for event in events:
     
 ind=np.arange(len(count1))
                   
-plt.subplot(211)
-plt.barh(ind, count1)
+fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(25,25))
 
-ax=plt.gca()
-ax.set_yticks(ind+.3)
-ax.set_yticklabels(events)
+axes[0].barh(ind, count1)
+axes[0].set_yticks(ind+.3)
+axes[0].set_yticklabels(events, fontsize=20)
+axes[0].set_title(drugname1, fontsize=30)
 
-plt.subplot(212)
-plt.barh(ind, count2)
+axes[1].barh(ind, count2)
+axes[1].set_yticks(ind+.3)
+axes[1].set_yticklabels(events, fontsize=20)
+axes[1].set_title(drugname2, fontsize=30)
 
-ax=plt.gca()
-ax.set_yticks(ind+.3)
-ax.set_yticklabels(events)
+plt.suptitle(&#39;Event counts for drugs&#39;, fontsize=30)
 
 plt.show()</pre>
 </div>
@@ -431,13 +441,8 @@ for c, drug, z in zip(colors, drugs, positions):
     
     for event in events:
         ys.append(get_event_count(druglist, event))
-    
-    # You can provide either a single color or an array. To demonstrate this,
-    # the first bar of each set will be colored cyan.
-    cs = [c] * len(xs)
-    cs[0] = &#39;c&#39;
-    ax.bar(xs, ys, zs=z, zdir=&#39;y&#39;, color=cs, alpha=0.8)
 
+    ax.bar(xs, ys, zs=z, zdir=&#39;y&#39;, color=c, alpha=0.8)
 
 ax.set_xticklabels(events)
 ax.set_yticklabels(drugs)
@@ -456,8 +461,44 @@ plt.show()</pre>
 </div>
 
 
+<div>
+<p>It might also be useful to assign each symptom a unique color (instead of each drug). This can be done by passing in the entire array of colors each time we call <em>bar</em>. (Note that in both cases the code is almost the same. It would be good practice to write this as a function and pass in a variable that defines the colored axis).</p>
+</div>
+
+
 <div class="in">
-<pre></pre>
+<pre>from mpl_toolkits.mplot3d import Axes3D
+
+colors=[&#39;b&#39;,&#39;g&#39;,&#39;r&#39;, &#39;c&#39;, &#39;m&#39;, &#39;y&#39;]
+drugs=[&#39;paxil&#39;, &#39;lexapro&#39;, &#39;hydrocodone&#39;, &#39;xanax&#39;, &#39;tramadol&#39;, &#39;vicodin&#39;]
+events=[&#39;FLUSHING&#39;, &#39;DYSPNOEA&#39;, &#39;FATIGUE&#39;, &#39;NAUSEA&#39;, &#39;PAIN&#39;, &#39;DIZZINESS&#39;, &#39;HEADACHE&#39;]
+positions=[50,40,30,20,10,0]
+fig = plt.figure(figsize=(10,10))
+ax = fig.add_subplot(111, projection=&#39;3d&#39;)
+for c, drug, z in zip(colors, drugs, positions):
+    xs = np.arange(len(events))
+    ys = []
+    druglist=get_drug_adverse_event_data(drug)
+    
+    for event in events:
+        ys.append(get_event_count(druglist, event))
+
+    ax.bar(xs, ys, zs=z, zdir=&#39;y&#39;, color=colors, alpha=0.8)
+
+ax.set_xticklabels(events)
+ax.set_yticklabels(drugs)
+ax.set_xlabel(&#39;Events&#39;)
+ax.set_ylabel(&#39;Drugs&#39;)
+ax.set_zlabel(&#39;Event Count&#39;)
+
+plt.title(&#39;Adverse Events&#39;, fontsize=20)
+plt.show()</pre>
+</div>
+
+<div class="out">
+<pre>
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_36_0.png">
+</pre>
 </div>
 
 
