@@ -363,17 +363,53 @@ plt.show()</pre>
 
 
 <div>
-<p>Variable width collumn chart</p>
+<p>Another option when visualizing two variables between categories is the variable width collumn chart. This chart can be useful if the scale between the variables is different. First lets generate an ordinary collumn chart using one of the less common adverse events (chills).</p>
 </div>
 
 
 <div class="in">
 <pre>event1=&#39;FATIGUE&#39;
-event2=&#39;NAUSEA&#39;
-
-ind=np.asarray([1,2])
+event2=&#39;CHILLS&#39;
 
 drugs=[&#39;paxil&#39;, &#39;lexapro&#39;, &#39;hydrocodone&#39;, &#39;xanax&#39;]
+
+
+width = 0.35 
+fig, ax = plt.subplots()
+
+rects=[]
+
+xc=0;
+
+for drug in drugs:
+    druglist=get_drug_adverse_event_data(drug)
+    
+    height1=get_event_count(druglist, event1)
+    height2=get_event_count(druglist, event2)
+    
+    rect = plt.bar(xc, height1, width, color=color1)
+    xc+=width
+    rect = plt.bar(xc, height2, width, color=color2)
+    xc+=width
+    
+plt.show()</pre>
+</div>
+
+<div class="out">
+<pre>
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_31_0.png">
+</pre>
+</div>
+
+
+<div>
+<p>An alternative is to use a variable width column chart which allows us to use a different scale for each variable.</p>
+</div>
+
+
+<div class="in">
+<pre>ind=np.asarray([1,2])
+
 colors=[&#39;#1c5229&#39;, &#39;#0a8641&#39;, &#39;#2cb41a&#39;, &#39;#5fbb46&#39;]
 
 fig, axes = plt.subplots(figsize=(15,10))
@@ -412,7 +448,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_31_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_33_0.png">
 </pre>
 </div>
 
@@ -453,7 +489,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_33_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_35_0.png">
 </pre>
 </div>
 
@@ -494,11 +530,6 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_35_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_37_0.png">
 </pre>
-</div>
-
-
-<div class="in">
-<pre></pre>
 </div>
