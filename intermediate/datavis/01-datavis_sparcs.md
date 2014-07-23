@@ -3,59 +3,386 @@ layout: lesson
 root: ../..
 ---
 
+# Introduction
+
+
+<div>
+<p>For this tutorial we'll be looking at a sample of dischage information containing de-identified patient information, hospital information, services rendered by the hospitals and billing information.</p>
+</div>
+
+
+<div>
+<p>We want to:</p>
+<ul>
+<li>Load the data using pandas</li>
+<li>Clean the data so we can work with it</li>
+<li>Produce Histograms of the Total Charges</li>
+<li>See how we can &quot;zoom in&quot; on the data to identify areas of interest</li>
+</ul>
+<p>*</p>
+</div>
+
+
+<div>
+<h4 id="objectives">Objectives</h4>
+<ul>
+<li>Learn how to use the &quot;apply&quot; function to make changes to the data in a column</li>
+<li>Learn how to use pandas binary vectors to select subsets of data</li>
+<li>learn some basic uses of the groupby function to manipulate your data</li>
+</ul>
+</div>
+
+
+<div>
+<p>To begin we import the libraries we'll be needing today, including the pylab submodule (named 'plt' for short) and pandas (renamed 'pd' to make typing easier). Additionally we include the <code>%matplotlib inline</code> statement to ensure our plots show up on the webpage.</p>
+</div>
+
 
 <div class="in">
 <pre>%matplotlib inline
+
 from matplotlib import pylab as plt
-import pandas as pd
-df = pd.read_csv(&#34;discharges.csv&#34;) </pre>
+import pandas as pd</pre>
+</div>
+
+
+<div>
+<p>Now we load the discharge information into our dataset by using panda's <code>read_csv()</code> function. This will load all the information along with the header and provide us with a variable <code>df</code> that we can use to manipulate the data and generate our plots.</p>
 </div>
 
 
 <div class="in">
-<pre>import string
-tbl = string.maketrans(&#34;&#34;, &#34;&#34;)
+<pre>df = pd.read_csv(&#34;discharges.csv&#34;)</pre>
+</div>
 
-df[&#39;Total Charges&#39;] = df[&#39;Total Charges&#39;].apply(lambda x: float(x.translate(tbl, &#34;$&#34;)))</pre>
+## Cleaning Data
+
+
+<div>
+<p>Right now we're primarily interested in Total Charges, but before we can start asking interesting questions about total charges and plotting its distribution we need to resolve a data cleanliness issue. Lets see what is in the 'Total Charges' column</p>
 </div>
 
 
 <div class="in">
-<pre>df[&#34;Total Charges&#34;].sum()</pre>
+<pre>df[&#39;Total Charges&#39;]</pre>
 </div>
 
 <div class="out">
-<pre>289176082.43999934</pre>
+<pre>0     $62328.96
+1     $30063.34
+2     $14315.22
+3     $32244.05
+4     $28109.18
+5     $21159.98
+6      $8800.68
+7     $71088.71
+8     $18795.74
+9      $5931.00
+10    $29129.62
+11    $41506.95
+12    $42735.52
+13    $12221.78
+14    $12417.50
+...
+9985    $16147.25
+9986     $4430.25
+9987     $7625.00
+9988    $27442.00
+9989     $8311.00
+9990     $6299.25
+9991    $10041.75
+9992    $15825.75
+9993     $8662.50
+9994     $4422.00
+9995     $8134.25
+9996    $18369.50
+9997     $1895.25
+9998    $10532.75
+9999    $11569.50
+Name: Total Charges, Length: 10000, dtype: object</pre>
+</div>
+
+
+<div>
+<p>Total Charges contains dollar values for the services rendered to the patient while at the hospital. Unfortunately the data currntly includes the dollar sign ($). This leads to some difficult problems when trying to add, subtract or do any other kind of operation on these values.</p>
+<p>As an example lets take the the <strong>first</strong> value of Total Charges (<code>df['Total Charges'].iloc[0]</code>) and add it to the <strong>second</strong> value of Total Charges (<code>df['Total Charges'].iloc[1]</code>).</p>
 </div>
 
 
 <div class="in">
-<pre>df[&#39;Total Charges&#39;].hist(bins=300, figsize=(16., 10.))</pre>
+<pre>df[&#39;Total Charges&#39;].iloc[0] + df[&#39;Total Charges&#39;].iloc[1]</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.axes.AxesSubplot at 0x501acd0&gt;
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_3_1.png">
+<pre>&#39;$62328.96$30063.34&#39;</pre>
+</div>
+
+
+<div>
+<p>This is certainly not what we want! But what is going on here?</p>
+<p>Instead of adding the <em>numbers</em> 62328.96 and 30063.34 Python has gone ahead and appended the <em>strings</em> $62328.96 and $30063.34. If we want to do any kind of plotting or take any kind of summary statistics we're going to need to convert the strings contained in Total Charges to actual numbers.</p>
+<p>From a high level this means 1. removing the dollar sign ($) from our string 2. converting the <em>type</em> of the variable from a string to a number 3. Doing this for every variable in the 'Total Charges' column.</p>
+<p>To achieve this practically we're going to write a function that takes a string like $62328.96 and converts it to a number 62328.96. Then we're going to apply that function to each of the cells in the 'Total Charges' column. That is the purpose of functions, to take an input and return a transformed output. In this case our input is total charge as a string and our output will be total charge as a number.</p>
+<p>Lets take a look at some of the building blocks we'll need.</p>
+</div>
+
+
+<div>
+<p>Replace is a function that we can use to return a new string which replaces certain characters with other characters. It takes two arguments, the first is the string to look for, the second is the string to replace with. In this case we replace with the empty string. Lets see an example of this:</p>
+</div>
+
+
+<div class="in">
+<pre>&#34;$62328.96&#34;.replace(&#34;$&#34;, &#34;&#34;)</pre>
+</div>
+
+<div class="out">
+<pre>&#39;62328.96&#39;</pre>
+</div>
+
+
+<div>
+<p>This is a good start, we've deleted the dollar sign ($) by &quot;replacing&quot; it with the empty string. Unfortunately this is not enough! our &quot;number&quot; is still considered a string, if we try and add two replaced strings we're still in the same situation:</p>
+</div>
+
+
+<div class="in">
+<pre>&#34;$62528.96&#34;.replace(&#34;$&#34;, &#34;&#34;) + &#34;$30063.34&#34;.replace(&#34;$&#34;, &#34;&#34;)</pre>
+</div>
+
+<div class="out">
+<pre>&#39;62528.9630063.34&#39;</pre>
+</div>
+
+
+<div>
+<p>Here we've removed the dollar signs ($) from each string and tried to add them together. Python still sees these as two strings, and this can be an easy point to miss. We need to tell python that these two 'strings' are actually numbers. For numbers that have floating point decimals we do this with the <code>float()</code> function.</p>
+</div>
+
+
+<div class="in">
+<pre>float(&#39;62528.96&#39;)</pre>
+</div>
+
+<div class="out">
+<pre>62528.96</pre>
+</div>
+
+
+<div>
+<p>Putting them both together</p>
+</div>
+
+
+<div class="in">
+<pre>float(&#39;$62528.96&#39;.replace(&#34;$&#34;, &#34;&#34;))</pre>
+</div>
+
+<div class="out">
+<pre>62528.96</pre>
+</div>
+
+
+<div>
+<h5 id="making-it-general">Making it General</h5>
+<p>We get the number that we expect. This is all well and good, but we'd like to be able to convert <strong>any</strong> string with a dollar sign to a floating point number. To do this we need a function:</p>
+</div>
+
+
+<div class="in">
+<pre>def translate_charge(string_charge):
+    return float(string_charge.replace(&#34;$&#34;, &#34;&#34;))</pre>
+</div>
+
+
+<div>
+<p>Now we can pass any value to our function <code>translate_charge</code> and it will replace the dollar sign ($) and return the number</p>
+</div>
+
+
+<div class="in">
+<pre>translate_charge(&#34;$62528.96&#34;)</pre>
+</div>
+
+<div class="out">
+<pre>62528.96</pre>
+</div>
+
+
+<div>
+<p>We can even get the addition we were looking for before</p>
+</div>
+
+
+<div class="in">
+<pre>translate_charge(&#34;$62528.96&#34;) + translate_charge(&#34;$30063.34&#34;)</pre>
+</div>
+
+<div class="out">
+<pre>92592.3</pre>
+</div>
+
+
+<div>
+<p>Now we just need to call this function on every value in 'Total Charges.' Luckily pandas has a very simple function that allows us to apply this function to each value. Not surprisingly it is called <code>apply</code></p>
+</div>
+
+
+<div class="in">
+<pre>df[&#39;Total Charges&#39;].apply(translate_charge)</pre>
+</div>
+
+<div class="out">
+<pre>0     62328.96
+1     30063.34
+2     14315.22
+3     32244.05
+4     28109.18
+5     21159.98
+6      8800.68
+7     71088.71
+8     18795.74
+9      5931.00
+10    29129.62
+11    41506.95
+12    42735.52
+13    12221.78
+14    12417.50
+...
+9985    16147.25
+9986     4430.25
+9987     7625.00
+9988    27442.00
+9989     8311.00
+9990     6299.25
+9991    10041.75
+9992    15825.75
+9993     8662.50
+9994     4422.00
+9995     8134.25
+9996    18369.50
+9997     1895.25
+9998    10532.75
+9999    11569.50
+Name: Total Charges, Length: 10000, dtype: float64</pre>
+</div>
+
+
+<div>
+<p>Careful though, because <code>apply</code> will not change <code>df['Total Charges']</code> it will just return a new column. If you want to keep that column you have to set Total Charges equal to it.</p>
+</div>
+
+
+<div class="in">
+<pre>df[&#39;Total Charges&#39;] = df[&#39;Total Charges&#39;].apply(translate_charge)</pre>
+</div>
+
+## Investigating the Data using histograms
+
+
+<div>
+<p>Now that we have cleaned up Total Charges and have proper numbers for values, we can start looking at some of the summary statistics for our sample. The quickest way to do this is to use the <code>describe()</code> function. This gives us the count, mean, the standard deviation and the min and max.</p>
+</div>
+
+
+<div class="in">
+<pre>df[&#39;Total Charges&#39;].describe()</pre>
+</div>
+
+<div class="out">
+<pre>count     10000.000000
+mean      28917.608244
+std       42960.967530
+min           8.500000
+25%        8322.365000
+50%       16885.315000
+75%       33265.787500
+max      909834.270000
+dtype: float64</pre>
+</div>
+
+
+<div>
+<p>We can use the <code>hist</code> function to plot a histogram of our data to get a better sense of our distribution. <code>hist</code> takes an argument <code>bins</code> to determine the number of bins we want to display. Finally we can use the argument <code>figsize</code> to increase the size of the figure.</p>
+</div>
+
+
+<div class="in">
+<pre>df[&#39;Total Charges&#39;].hist(bins=200, figsize=(16.0, 10.0))</pre>
+</div>
+
+<div class="out">
+<pre>&lt;matplotlib.axes.AxesSubplot at 0x7f14b2365390&gt;
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_36_1.png">
 </pre>
 </div>
 
 
+<div>
+<h5 id="zooming-in">Zooming In</h5>
+<p>This looks like a distribution with a pretty long tail. This makes it hard to see exactly what is going on around the mean of the distribution. What we'd really like to be able to do is to &quot;zoom in&quot; and see the distribution without some of these outliers.</p>
+<p>To do this we're going to use binary vectors to select subsets of the data we want.</p>
+</div>
+
+
+<div>
+<p>Binary vectors are just columns of data that contain either True or False. We can generate these vectors by comparing columns to values. For example:</p>
+</div>
+
+
 <div class="in">
-<pre>len(df)</pre>
+<pre>df[&#39;Total Charges&#39;] &lt; 50000</pre>
 </div>
 
 <div class="out">
-<pre>10000</pre>
+<pre>0     False
+1      True
+2      True
+3      True
+4      True
+5      True
+6      True
+7     False
+8      True
+9      True
+10     True
+11     True
+12     True
+13     True
+14     True
+...
+9985    True
+9986    True
+9987    True
+9988    True
+9989    True
+9990    True
+9991    True
+9992    True
+9993    True
+9994    True
+9995    True
+9996    True
+9997    True
+9998    True
+9999    True
+Name: Total Charges, Length: 10000, dtype: bool</pre>
+</div>
+
+
+<div>
+<p>This simple operation has compared each cell in Total Charges to the value 50,000. If the value is less than 50,000 it gives a True, otherwise it gives a False. Once we have this I can use this selector to grab only the values that are True (meet our condition)</p>
 </div>
 
 
 <div class="in">
-<pre>df[df[&#39;Total Charges&#39;] &lt; 25000][&#39;Total Charges&#39;].hist(bins=200 ,figsize=(16., 10.))</pre>
+<pre>selector = df[&#39;Total Charges&#39;] &lt; 50000
+df[&#39;Total Charges&#39;][selector].hist(bins=200 ,figsize=(16., 10.))</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.axes.AxesSubplot at 0x5929590&gt;
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_5_1.png">
+<pre>&lt;matplotlib.axes.AxesSubplot at 0x7f14b1985e10&gt;
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_41_1.png">
 </pre>
 </div>
 
@@ -67,7 +394,7 @@ df[df[&#39;Total Charges&#39;] &lt; 500000][&#39;Total Charges&#39;].hist(bins=2
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x6530bd0&gt;
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_6_1.png">
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_42_1.png">
 </pre>
 </div>
 
@@ -701,7 +1028,7 @@ i = interact(by_county, county=list(df[&#39;Hospital County&#39;].dropna().uniqu
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_10_0.png">
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_46_0.png">
 </pre>
 </div>
 
@@ -740,7 +1067,7 @@ i = interact(by_county_with_0to17, county=list(df[&#39;Hospital County&#39;].dro
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_12_0.png">
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_48_0.png">
 </pre>
 </div>
 
@@ -751,7 +1078,7 @@ i = interact(by_county_with_0to17, county=list(df[&#39;Hospital County&#39;].dro
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x66f4510&gt;
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_13_1.png">
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_49_1.png">
 </pre>
 </div>
 
@@ -765,7 +1092,7 @@ i = interact(by_county_with_0to17, county=list(df[&#39;Hospital County&#39;].dro
 
 <div class="out">
 <pre>&lt;matplotlib.axes.AxesSubplot at 0x6f40f50&gt;
-<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_14_1.png">
+<img src="../../intermediate/datavis/01-datavis_sparcs_files/intermediate/datavis/01-datavis_sparcs_50_1.png">
 </pre>
 </div>
 

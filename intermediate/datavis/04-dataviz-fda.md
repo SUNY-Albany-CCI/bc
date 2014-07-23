@@ -50,12 +50,6 @@ from operator import itemgetter
 </div>
 
 
-<div class="in">
-<pre># try reading with pandas... This seems to raise an error...
-#fdaquery=pd.read_json(&#34;http://api.fda.gov/drug/event.json?search=patient.drug.openfda.pharm_class_epc:\&#34;nonsteroidal+anti-inflammatory+drug\&#34;&amp;count=patient.reaction.reactionmeddrapt.exact&#34;)</pre>
-</div>
-
-
 <div>
 <p>Here we use the openFDA api to get drug data.</p>
 <ul>
@@ -255,8 +249,8 @@ print paxil_list</pre>
 
 
 <div class="in">
-<pre>color1=&#39;#d71f26&#39;
-color2=&#39;#874c9d&#39;
+<pre>color1=&#39;#0a8641&#39;
+color2=&#39;#812983&#39;
 
 ind=np.asarray([1,2])
 width = 0.35 
@@ -278,7 +272,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_26_0.png">
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_25_0.png">
 </pre>
 </div>
 
@@ -304,12 +298,12 @@ ind=np.arange(len(count1))
                   
 fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(25,25))
 
-axes[0].barh(ind, count1)
+axes[0].barh(ind, count1, color=color1)
 axes[0].set_yticks(ind+.3)
 axes[0].set_yticklabels(events, fontsize=20)
 axes[0].set_title(drugname1, fontsize=30)
 
-axes[1].barh(ind, count2)
+axes[1].barh(ind, count2, color=color2)
 axes[1].set_yticks(ind+.3)
 axes[1].set_yticklabels(events, fontsize=20)
 axes[1].set_title(drugname2, fontsize=30)
@@ -321,7 +315,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_28_0.png">
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_27_0.png">
 </pre>
 </div>
 
@@ -347,26 +341,23 @@ for drug, pos in zip(drugs,plotpos):
     druglist=get_drug_adverse_event_data(drug)
     counts=[get_event_count(druglist, event1), get_event_count(druglist, event2)]
     plt.subplot(pos)
-    plt.bar(ind, counts)
+    plt.bar(ind, counts, color=[color1, color2])
     ax=plt.gca()
     ax.set_xticks(ind+.5)
     ax.set_xticklabels([&#39;Fatigue&#39;,&#39;Nausea&#39;])
     ax.set_title(drug)
+    plt.ylim([0,5000])
     
     
 fig.set_size_inches(10,10)    
 plt.subplots_adjust(wspace=.5,hspace=.5)
 plt.suptitle(&#39;Event counts for drugs&#39;, fontsize=20)
-plt.show()
-            
-            
-    
-    </pre>
+plt.show()</pre>
 </div>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_30_0.png">
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_29_0.png">
 </pre>
 </div>
 
@@ -383,11 +374,13 @@ event2=&#39;NAUSEA&#39;
 ind=np.asarray([1,2])
 
 drugs=[&#39;paxil&#39;, &#39;lexapro&#39;, &#39;hydrocodone&#39;, &#39;xanax&#39;]
-colors=[&#39;r&#39;, &#39;g&#39;, &#39;b&#39;, &#39;y&#39;]
+colors=[&#39;#1c5229&#39;, &#39;#0a8641&#39;, &#39;#2cb41a&#39;, &#39;#5fbb46&#39;]
 
-fig, axes = plt.subplots(figsize=(10,10))
+fig, axes = plt.subplots(figsize=(15,10))
 
 pos=0
+xticks=[]
+current_tick=0
 
 for drug, color in zip(drugs, colors):
     druglist=get_drug_adverse_event_data(drug)
@@ -397,12 +390,17 @@ for drug, color in zip(drugs, colors):
     
     plt.bar(pos, height, width, color=color)
     
+    current_tick=pos+width/2
     pos=pos+width
+    
+    xticks.append(current_tick)
     #ax=plt.gca()
     #ax.set_xticks(ind+.5)
     #ax.set_xticklabels([&#39;Fatigue&#39;,&#39;Nausea&#39;])
     #ax.set_title(drug)
     
+axes.set_xticks(xticks)
+axes.set_xticklabels(drugs)
 axes.set_ylabel(event1, fontsize=15)
 axes.set_xlabel(event2, fontsize=15)
 plt.title(&#39;Adverse Events&#39;, fontsize=20)
@@ -414,14 +412,13 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_32_0.png">
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_31_0.png">
 </pre>
 </div>
 
 
 <div>
-<p>For many drugs and many events we can use a 3D bar plot based on http://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html#bar-plots</p>
-<p>Need to move y axis labels - this might help http://stackoverflow.com/questions/12840129/change-the-position-move-of-tick-labels-when-plotting-with-matplotlib</p>
+<p>For many drugs and many events we can use a 3D bar plot based on http://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html#bar-plots. Matplotlib has a 3d plotting extension 'mplot3d', which supports many type of 3D plots.</p>
 </div>
 
 
@@ -456,7 +453,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_34_0.png">
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_33_0.png">
 </pre>
 </div>
 
@@ -497,7 +494,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_36_0.png">
+<img src="../../intermediate/datavis/04-dataviz-fda_files/intermediate/datavis/04-dataviz-fda_35_0.png">
 </pre>
 </div>
 
