@@ -7,9 +7,9 @@ root: ../..
 
 
 <div>
-<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created. - **A Stacked Column Chart to show relative and absolute differences between groups. This chart also allows us to easily compare group totals. ** - <strong>A 100% Stacked Column Chart to show relative differences between groups.</strong></p>
+<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created. - A Stacked Column Chart to show relative and absolute differences between groups. This chart also allows us to easily compare group totals. - A 100% Stacked Column Chart to show relative differences between groups.</p>
 <h3 id="objectives">Objectives</h3>
-<p>The example uses yearly data on hospital acquired infections. Infection data from two hospitals is compared over 3 years. We want to: - <strong>Load the data from a file into memory</strong> - <strong>Explore the data as to understand what it contains and how it is organized</strong> - <strong>Choose the data we want to plot</strong> - <strong>Choose an appropriate type of plot</strong> - <strong>Plot the data</strong></p>
+<p>The example uses yearly data on hospital acquired infections. Infection data from two hospitals is compared over 3 years. We want to: - Load the data from a file into memory - Explore the data as to understand what it contains and how it is organized - Choose the data we want to plot - Choose an appropriate type of plot - Plot the data</p>
 </div>
 
 
@@ -24,6 +24,12 @@ root: ../..
 from matplotlib import pylab as plt
 import numpy as np
 import pandas as pd  
+</pre>
+</div>
+
+<div class="out">
+<pre>/usr/local/lib/python2.7/dist-packages/pandas/io/excel.py:626: UserWarning: Installed openpyxl is not supported at this time. Use &gt;=1.6.1 and &lt;2.0.0.
+  .format(openpyxl_compat.start_ver, openpyxl_compat.stop_ver))
 </pre>
 </div>
 
@@ -115,12 +121,12 @@ print type(df)</pre>
 <div>
 <p>We have a column called 'Hospital Name'. We want to compare data for different hospitals. So it is useful to look at the unique values of this column in order to determine how many and which hospitals the data contains. This is the type of coding we can do in one line (once we get familiar with the libraries). Here we use multiple lines as to make it clear what is happening.</p>
 <ul>
-<li><strong>We first extract just the <code>Hospital Name</code> column</strong></li>
-<li><strong>We check the the type, it is a data series</strong></li>
-<li><strong>We then ask for only the unique values</strong></li>
-<li><strong>We again check the type, it is an array this time</strong></li>
-<li><strong>We convert this array back to a series (mainly to take advantage of pandas 'pretty' <code>print</code> styles)</strong></li>
-<li><strong>Finally we print this series as to find out how many unique hospitals are in the data.</strong></li>
+<li>We first extract just the <code>Hospital Name</code> column</li>
+<li>We check the the type, it is a data series</li>
+<li>We then ask for only the unique values</li>
+<li>We again check the type, it is an array this time</li>
+<li>We convert this array back to a series (mainly to take advantage of pandas 'pretty' <code>print</code> styles)</li>
+<li>Finally we print this series as to find out how many unique hospitals are in the data.</li>
 </ul>
 </div>
 
@@ -128,7 +134,7 @@ print type(df)</pre>
 <div class="in">
 <pre>hospitalNameExtracted=df[&#39;Hospital Name&#39;]
 print type(hospitalNameExtracted)
-hospitalNames=df[&#39;Hospital Name&#39;].unique()
+hospitalNamesUnique=df[&#39;Hospital Name&#39;].unique()
 print type(hospitalNamesUnique)
 hospitalNames=pd.Series(hospitalNamesUnique)
 print hospitalNames</pre>
@@ -279,7 +285,7 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x5272f10&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x3f58e10&gt;
 <img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_23_1.png">
 </pre>
 </div>
@@ -333,7 +339,12 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x55d8bd0&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x3f83510&gt;
 <img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_29_1.png">
 </pre>
+</div>
+
+
+<div class="in">
+<pre></pre>
 </div>
