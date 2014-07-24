@@ -296,7 +296,7 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x3f58e10&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x3fcf890&gt;
 <img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_23_1.png">
 </pre>
 </div>
@@ -350,9 +350,14 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x3f83510&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x452cf50&gt;
 <img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_29_1.png">
 </pre>
+</div>
+
+
+<div class="in">
+<pre></pre>
 </div>
 
 
