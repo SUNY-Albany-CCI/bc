@@ -7,9 +7,20 @@ root: ../..
 
 
 <div>
-<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created. - A Stacked Column Chart to show relative and absolute differences between groups. This chart also allows us to easily compare group totals. - A 100% Stacked Column Chart to show relative differences between groups.</p>
+<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created.</p>
+<ul>
+<li><strong>A Stacked Column Chart to show relative and absolute differences between groups. This chart also allows us to easily compare group totals.</strong></li>
+<li><strong>A 100% Stacked Column Chart to show relative differences between groups.</strong></li>
+</ul>
 <h3 id="objectives">Objectives</h3>
-<p>The example uses yearly data on hospital acquired infections. Infection data from two hospitals is compared over 3 years. We want to: - Load the data from a file into memory - Explore the data as to understand what it contains and how it is organized - Choose the data we want to plot - Choose an appropriate type of plot - Plot the data</p>
+<p>The example uses yearly data on hospital acquired infections. Infection data from two hospitals is compared over 3 years. We want to:</p>
+<ul>
+<li><strong>Load the data from a file into memory</strong></li>
+<li><strong>Explore the data as to understand what it contains and how it is organized</strong></li>
+<li><strong>Choose the data we want to plot</strong></li>
+<li><strong>Choose an appropriate type of plot</strong></li>
+<li><strong>Plot the data</strong></li>
+</ul>
 </div>
 
 
@@ -121,12 +132,12 @@ print type(df)</pre>
 <div>
 <p>We have a column called 'Hospital Name'. We want to compare data for different hospitals. So it is useful to look at the unique values of this column in order to determine how many and which hospitals the data contains. This is the type of coding we can do in one line (once we get familiar with the libraries). Here we use multiple lines as to make it clear what is happening.</p>
 <ul>
-<li>We first extract just the <code>Hospital Name</code> column</li>
-<li>We check the the type, it is a data series</li>
-<li>We then ask for only the unique values</li>
-<li>We again check the type, it is an array this time</li>
-<li>We convert this array back to a series (mainly to take advantage of pandas 'pretty' <code>print</code> styles)</li>
-<li>Finally we print this series as to find out how many unique hospitals are in the data.</li>
+<li><strong>We first extract just the <code>Hospital Name</code> column</strong></li>
+<li><strong>We check the the type, it is a data series</strong></li>
+<li><strong>We then ask for only the unique values</strong></li>
+<li><strong>We again check the type, it is an array this time</strong></li>
+<li><strong>We convert this array back to a series (mainly to take advantage of pandas 'pretty' <code>print</code> styles)</strong></li>
+<li><strong>Finally we print this series as to find out how many unique hospitals are in the data.</strong></li>
 </ul>
 </div>
 
