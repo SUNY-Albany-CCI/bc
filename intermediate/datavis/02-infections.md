@@ -7,8 +7,15 @@ root: ../..
 
 
 <div>
-<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created. - <strong>A Stacked Column Chart to show relative and absolute differences.</strong> - <strong>A 100% Stacked Column Chart to show relative differences.</strong></p>
-<p>The example uses yearly data on hospital acquired infections. Data from two hospitals is compared over 3 years.</p>
+<p>This example shows how to plot a composition for data that is changing over time when there are only a small number of time periods. Two plots will be created. - **A Stacked Column Chart to show relative and absolute differences between groups. This chart also allows us to easily compare group totals. ** - <strong>A 100% Stacked Column Chart to show relative differences between groups.</strong></p>
+<h3 id="objectives">Objectives</h3>
+<p>The example uses yearly data on hospital acquired infections. Infection data from two hospitals is compared over 3 years. We want to: - <strong>Load the data from a file into memory</strong> - <strong>Explore the data as to understand what it contains and how it is organized</strong> - <strong>Choose the data we want to plot</strong> - <strong>Choose an appropriate type of plot</strong> - <strong>Plot the data</strong></p>
+</div>
+
+
+<div>
+<h3 id="importing-modules">Importing Modules</h3>
+<p>In this example we need extra functionality for plotting (matplotlib), math (numpy) and data handling (pandas).</p>
 </div>
 
 
@@ -22,17 +29,23 @@ import pandas as pd
 
 
 <div>
-<p>First we read the data using Pandas.</p>
+<p>First we read the data using the <code>Pandas</code> library. The pandas <code>read_csv</code> function reads the data from the file and places it in an appropriate data structure. If we are new to a library like <code>Pandas</code> then after we call a function it is useful to print the return type.</p>
 </div>
 
 
 <div class="in">
-<pre>df = pd.read_csv(&#34;Hospital-Acquired_Infections__Beginning_2008.csv&#34;)</pre>
+<pre>df = pd.read_csv(&#34;Hospital-Acquired_Infections__Beginning_2008.csv&#34;)
+print type(df)</pre>
+</div>
+
+<div class="out">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre>
 </div>
 
 
 <div>
-<p>Take a look at the columns to get a feel for the information in the dataset.</p>
+<p>The return type is a <code>pandas.core.frame.Dataframe</code>. Google is our friend here. When we google <code>pandas dataframe</code> one of the first results is a blog style tutorial http://www.gregreda.com/2013/10/26/working-with-pandas-dataframes/ that we can use to quickly gain knowledge we need to achieve a task. This blog contains a few useful tricks. For example we can take a look at the columns of the dataframe to get a feel for the information in the dataset.</p>
 </div>
 
 
@@ -46,7 +59,7 @@ import pandas as pd
 
 
 <div>
-<p>It is also useful to look at the head (first 5 rows) of the data in order to inspect how the data is organized.</p>
+<p>The column names tell us what kind of data the structure contains. In this case data about Hospitals, Indicators, and Infections. It is also useful to look at the head (first 5 rows) of the data in order to learn more about how the data is organized.</p>
 </div>
 
 
@@ -100,17 +113,31 @@ import pandas as pd
 
 
 <div>
-<p>We have a column called 'Hospital Name'. It is useful to look at the unique values of this column in order to determine how many and which hospitals the data contains.</p>
+<p>We have a column called 'Hospital Name'. We want to compare data for different hospitals. So it is useful to look at the unique values of this column in order to determine how many and which hospitals the data contains. This is the type of coding we can do in one line (once we get familiar with the libraries). Here we use multiple lines as to make it clear what is happening.</p>
+<ul>
+<li><strong>We first extract just the <code>Hospital Name</code> column</strong></li>
+<li><strong>We check the the type, it is a data series</strong></li>
+<li><strong>We then ask for only the unique values</strong></li>
+<li><strong>We again check the type, it is an array this time</strong></li>
+<li><strong>We convert this array back to a series (mainly to take advantage of pandas 'pretty' <code>print</code> styles)</strong></li>
+<li><strong>Finally we print this series as to find out how many unique hospitals are in the data.</strong></li>
+</ul>
 </div>
 
 
 <div class="in">
-<pre>hospitalNames=pd.Series(df[&#39;Hospital Name&#39;].unique())
+<pre>hospitalNameExtracted=df[&#39;Hospital Name&#39;]
+print type(hospitalNameExtracted)
+hospitalNames=df[&#39;Hospital Name&#39;].unique()
+print type(hospitalNamesUnique)
+hospitalNames=pd.Series(hospitalNamesUnique)
 print hospitalNames</pre>
 </div>
 
 <div class="out">
-<pre>0                        New York State - All Hospitals
+<pre>&lt;class &#39;pandas.core.series.Series&#39;&gt;
+&lt;type &#39;numpy.ndarray&#39;&gt;
+0                        New York State - All Hospitals
 1                        Albany Medical Center Hospital
 2                              Albany Memorial Hospital
 3                                    St Peters Hospital
@@ -199,15 +226,15 @@ print hospitalData2[&#39;Indicator Name&#39;].unique()</pre>
 <pre>[2012 2011 2010 2009 2008]
 [2012 2011 2010 2009 2008]
 
-[SSI Overall Standardized Infection Ratio SSI Hysterectomy SSI Hip
- SSI Colon CLABSI Overall Standardized Infection Ratio
- CLABSI Medical Surgical ICU Nonteaching CDI Hospital Onset
- CDI Hospital Associated CDI Community Onset]
+[&#39;SSI Overall Standardized Infection Ratio&#39; &#39;SSI Hysterectomy&#39; &#39;SSI Hip&#39;
+ &#39;SSI Colon&#39; &#39;CLABSI Overall Standardized Infection Ratio&#39;
+ &#39;CLABSI Medical Surgical ICU Nonteaching&#39; &#39;CDI Hospital Onset&#39;
+ &#39;CDI Hospital Associated&#39; &#39;CDI Community Onset&#39;]
 
-[SSI Overall Standardized Infection Ratio SSI Hysterectomy SSI Hip
- SSI Colon CLABSI Overall Standardized Infection Ratio
- CLABSI Medical Surgical ICU Nonteaching CDI Hospital Onset
- CDI Hospital Associated CDI Community Onset]
+[&#39;SSI Overall Standardized Infection Ratio&#39; &#39;SSI Hysterectomy&#39; &#39;SSI Hip&#39;
+ &#39;SSI Colon&#39; &#39;CLABSI Overall Standardized Infection Ratio&#39;
+ &#39;CLABSI Medical Surgical ICU Nonteaching&#39; &#39;CDI Hospital Onset&#39;
+ &#39;CDI Hospital Associated&#39; &#39;CDI Community Onset&#39;]
 </pre>
 </div>
 
@@ -226,7 +253,7 @@ infections2=hospitalData2[hospitalData2[&#39;Indicator Name&#39;]==indicator]</p
 
 
 <div>
-<p>Define colors for the plots.</p>
+<p>Here we define colors for the plots.</p>
 </div>
 
 
@@ -237,7 +264,7 @@ color2=&#39;#874c9d&#39;</pre>
 
 
 <div>
-<p>Now we can use a stacked collumn chart to Create a stacked collumn chart based on this example (http://matplotlib.org/examples/pylab_examples/bar_stacked.html)</p>
+<p>Now we can use a stacked collumn chart to Create a stacked column chart based on this example (http://matplotlib.org/examples/pylab_examples/bar_stacked.html). Stacked column charts are a useful way to compare elements within a group and at the same time compare totals. In this example we compare infections from two hospitals over 3 years. At the same time we can quickly see trends in the total number of infections from both hospitals.</p>
 </div>
 
 
@@ -248,20 +275,13 @@ p2=plt.bar([1,2,3], infections2[&#39;Infections observed&#39;], 1, color=color2,
 plt.ylabel(&#39;infections&#39;)
 plt.title(indicator+&#39;infections&#39;)
 plt.xticks([1.5,2.5,3.5],(&#39;2010&#39;, &#39;2011&#39;, &#39;2012&#39;) )
-#plt.yticks(np.arange(0,81,10))
-plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )
-</pre>
+plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x5b68ed0&gt;
-<img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_22_1.png">
+<pre>&lt;matplotlib.legend.Legend at 0x5272f10&gt;
+<img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_23_1.png">
 </pre>
-</div>
-
-
-<div class="in">
-<pre></pre>
 </div>
 
 
@@ -313,7 +333,7 @@ plt.legend( (p1[0], p2[0]), (hospital1, hospital2) )</pre>
 </div>
 
 <div class="out">
-<pre>&lt;matplotlib.legend.Legend at 0x5ba4050&gt;
+<pre>&lt;matplotlib.legend.Legend at 0x55d8bd0&gt;
 <img src="../../intermediate/datavis/02-infections_files/intermediate/datavis/02-infections_29_1.png">
 </pre>
 </div>

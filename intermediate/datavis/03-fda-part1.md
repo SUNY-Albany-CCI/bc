@@ -371,7 +371,7 @@ plt.show()</pre>
 <pre>event1=&#39;FATIGUE&#39;
 event2=&#39;CHILLS&#39;
 
-drugs=[&#39;paxil&#39;, &#39;lexapro&#39;, &#39;hydrocodone&#39;, &#39;xanax&#39;]
+drugs=[&#39;aspirin&#39;, &#39;lexapro&#39;, &#39;hydrocodone&#39;, &#39;xanax&#39;]
 
 
 width = 0.35 
