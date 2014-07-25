@@ -28,11 +28,16 @@ root: ../..
 <div>
 <h4 id="objectives">Objectives</h4>
 <ul>
-<li>use an API to retrieve data</li>
-<li>define small functions that we can re-use</li>
-<li>select the appropriate chart depending on how many items and categories we have</li>
-<li>use matplotlib to create the charts</li>
+<li><strong>use an API to retrieve data</strong></li>
+<li><strong>define small functions that we can re-use</strong></li>
+<li><strong>select the appropriate chart depending on how many items and categories we have</strong></li>
+<li><strong>use matplotlib to create the charts</strong></li>
 </ul>
+</div>
+
+
+<div>
+<p>As usual we import libraries that we will use and we tell the notebook to create the plots inline.</p>
 </div>
 
 
@@ -44,14 +49,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 from operator import itemgetter
 
-
-
 %matplotlib inline   </pre>
 </div>
 
 
 <div>
-<p>Here we use the openFDA api to get drug data.</p>
+<p>Now we use the openFDA api to get drug data.</p>
 <ul>
 <li>First we define a request string following the documentation on the openFDA site (https://open.fda.gov/api/reference/). Note that most of the request string is static. However the drugname is passed in as a parameter.</li>
 <li>We use urlib2 to open the url and get the response</li>
@@ -104,7 +107,7 @@ results
 
 
 <div>
-<p>It appears we have meta-data and results. Get the results and print out the type</p>
+<p>It appears we have meta-data and results. Retrieve <code>results</code> and print out the type</p>
 </div>
 
 
@@ -189,18 +192,30 @@ term: FALL count 4941
 
 
 <div>
-<p>We also define a function that will return the event count for a adverse event. TODO: explain the 'map' approach to get the index OR make it less elegant (but more understandable) by just looping and searching for the symptom we want)</p>
+<p>We also define a function that will return the event count for an adverse event. To determine the adverse event count we need to retrieve the <code>count</code> for a specific <code>term</code> (remember <code>term</code> is the name of the adverse event). We end up using an <code>itemgetter</code> to retrieve a list of terms. Then we find the index where the term of interest is located. Then we use the index to get the count. This is all done concisely in a couple of lines of code. The commented out section is a scratch pad where we experimented with the components that we used to write <code>get_event_count</code>.</p>
 </div>
 
 
 <div class="in">
-<pre>def get_event_count(event_list, event):
+<pre>&#39;&#39;&#39;temp1=itemgetter(&#39;term&#39;)
+print type(temp1)
+
+temp2=map(temp1, fda_list)
+print type(temp2)
+print temp2
+
+temp3=temp2.index(&#39;FATIGUE&#39;)
+print temp3
+
+count=fda_list[temp3].get(&#39;count&#39;)
+print count&#39;&#39;&#39;
+
+def get_event_count(event_list, event):
     try:
         index=map(itemgetter(&#39;term&#39;), event_list).index(event)
         return event_list[index].get(&#39;count&#39;)
     except ValueError:
-        return 0
-    </pre>
+        return 0 </pre>
 </div>
 
 
@@ -272,7 +287,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_25_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_26_0.png">
 </pre>
 </div>
 
@@ -315,7 +330,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_27_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_28_0.png">
 </pre>
 </div>
 
@@ -357,7 +372,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_29_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_30_0.png">
 </pre>
 </div>
 
@@ -397,13 +412,13 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_31_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_32_0.png">
 </pre>
 </div>
 
 
 <div>
-<p>An alternative is to use a variable width column chart which allows us to use a different scale for each variable.</p>
+<p>An alternative is to use a variable width column chart which allows us to use all the axis space for each variable.</p>
 </div>
 
 
@@ -430,25 +445,18 @@ for drug, color in zip(drugs, colors):
     pos=pos+width
     
     xticks.append(current_tick)
-    #ax=plt.gca()
-    #ax.set_xticks(ind+.5)
-    #ax.set_xticklabels([&#39;Fatigue&#39;,&#39;Nausea&#39;])
-    #ax.set_title(drug)
     
 axes.set_xticks(xticks)
 axes.set_xticklabels(drugs)
 axes.set_ylabel(event1, fontsize=15)
 axes.set_xlabel(event2, fontsize=15)
 plt.title(&#39;Adverse Events&#39;, fontsize=20)
-#fig.set_size_inches(10,10)    
-#plt.subplots_adjust(wspace=.5,hspace=.5)
-#plt.suptitle(&#39;Event counts for drugs&#39;, fontsize=20)
 plt.show()</pre>
 </div>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_33_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_34_0.png">
 </pre>
 </div>
 
@@ -489,7 +497,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_35_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_36_0.png">
 </pre>
 </div>
 
@@ -530,6 +538,6 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_37_0.png">
+<img src="../../intermediate/datavis/03-fda-part1_files/intermediate/datavis/03-fda-part1_38_0.png">
 </pre>
 </div>
