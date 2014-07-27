@@ -7,14 +7,19 @@ root: ../..
 
 
 <div>
-<p>In this example we'll be using the OpenFDA api to retrieve and plot data sampled at many time periods. We will show some plot types that are useful for near continuous data with hundreds of samples.</p>
-<p>We will use the openFDA api again to retrieve adverse event data for a number of drugs. Data will be retrieved for every week over a period of four years. This means there will be over 200 datapoints. We then show how to.</p>
+<p>In this example we'll be using the OpenFDA API to retrieve and plot data sampled at many time periods. We will show some plot types that are useful for near continuous data with hundreds of samples.</p>
+<p>We will use the openFDA API again to retrieve adverse event data for a number of drugs. Data will be retrieved for every week over a period of four years. This means there will be over 200 datapoints. We then show how to.</p>
 <ul>
 <li><strong>plot line profiles</strong></li>
 <li><strong>use a smoothing function to reduce noise in the data</strong></li>
 <li><strong>use a stacked area chart to show relative and absolute trends</strong></li>
-<li><strong>use a 100% stacked area chart to emphasize relative trends</strong></li>
+<li><strong>use a 100% stacked area chart to emphasize uncorrelated trends</strong></li>
 </ul>
+</div>
+
+
+<div>
+<p>As usual we start by importing the libraries we will need to use.</p>
 </div>
 
 
@@ -26,9 +31,23 @@ import urllib2 as ulib
 import simplejson
 import matplotlib.pyplot as plt
 from operator import itemgetter
-import datetime
+import datetime</pre>
+</div>
 
-%matplotlib inline </pre>
+<div class="out">
+<pre>/usr/local/lib/python2.7/dist-packages/pandas/io/excel.py:626: UserWarning: Installed openpyxl is not supported at this time. Use &gt;=1.6.1 and &lt;2.0.0.
+  .format(openpyxl_compat.start_ver, openpyxl_compat.stop_ver))
+</pre>
+</div>
+
+
+<div>
+<p>We also tell the notebook to render inline</p>
+</div>
+
+
+<div class="in">
+<pre>%matplotlib inline </pre>
 </div>
 
 
@@ -81,14 +100,22 @@ for i in range(0, 5):
 
 
 <div>
-<p>Once we learn how to retrieve data by time period we put the code into a function so we can re-use it.</p>
+<p>Once we learn how to retrieve data by time period we put the code into a function so we can re-use it. It's a good idea to document the function with a small description of the overall purpose and the type and purpose of the inputs and outputs. So let's do that.</p>
+<p><code>get_event_data</code></p>
+<p>Description: Forms a request string and asks the openFDA API for adverse event info for a drug between two dates.</p>
+<p>Inputs:</p>
+<ul>
+<li><code>drugname</code>: String, name of drug</li>
+<li><code>start_date</code>: String representing a date in Y-m-d format.<br /></li>
+<li><code>end_date</code>: String representing a data in Y-m-d format.</li>
+</ul>
+<p>Return Value: JSON structure representing adverse event info reported for a drug between the start and end dates.</p>
 </div>
 
 
 <div class="in">
 <pre>def get_event_data(drugname, start_date, end_date):
     # form a request
-    
     api_key=&#39;6OcOelyLSQYJAZlZ8C1XggprPQ5oBx8171k9z0aP&#39;
     
     request_string=&#39;https://api.fda.gov/drug/event.json?api_key=&#39;+api_key+&#39;&amp;search=patient.drug.medicinalproduct:&#39;+str(drugname)+&#39;+AND+receivedate:[&#39;+str(start_date)+&#39;+TO+&#39;+str(end_date)+&#39;]&amp;count=patient.reaction.reactionmeddrapt.exact&#39;
@@ -129,9 +156,7 @@ for i in range(0, 5):
 
 
 <div class="in">
-<pre>
-
-drug_dictionary={}
+<pre>drug_dictionary={}
 
 #for each drug create an empty dictionary
 for drug in drugs:
@@ -173,18 +198,6 @@ for drug in drugs:
 fp.close()</pre>
 </div>
 
-<div class="out">
-<pre>---------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
-&lt;ipython-input-9-1fd134dc3207&gt; in &lt;module&gt;()
-      1 with open(&#39;drug_events.json&#39;, &#39;wb&#39;) as fp:
-----&gt; 2     js.dump(drug_dictionary, fp)
-      3 
-      4 fp.close()
-
-NameError: name &#39;drug_dictionary&#39; is not defined</pre>
-</div>
-
 
 <div>
 <p>If you did not generate the data using the openFDA api you can open the data at this step. If you did generate the data and save it, it is good practice to reopen it and verify the file saved properly.</p>
@@ -198,7 +211,7 @@ NameError: name &#39;drug_dictionary&#39; is not defined</pre>
 
 
 <div>
-<p>We need a function to smooth our data. This one is taken from the scipy cookbook http://wiki.scipy.org/Cookbook/SignalSmooth.</p>
+<p>We need a function to smooth our data. This one is taken from the scipy cookbook. A complete explation of the function is beyond the scope of this lesson but can be found here http://wiki.scipy.org/Cookbook/SignalSmooth.</p>
 </div>
 
 
@@ -293,7 +306,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_24_0.png">
+<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_27_0.png">
 </pre>
 </div>
 
@@ -304,15 +317,12 @@ plt.show()</pre>
 
 
 <div class="in">
-<pre>smoothed_data={}
-
-for drug in drugs:
+<pre>for drug in drugs:
     event_list=[]
     for entry in data[drug]:
         event_list.append( entry[&#39;event_count&#39;] )
     x=np.arange(len(event_list))
     plt.plot(x, event_list, label=drug)
-    smoothed_data[drug]=smooth(np.array(event_list),50)
     
 plt.title(&#39;Weekly adverse events&#39;)
 plt.ylabel(&#39;Adverse Events&#39;)
@@ -326,19 +336,22 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_26_0.png">
+<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_29_0.png">
 </pre>
 </div>
 
 
 <div>
-<p>The data is very noisy with spikes that appear correlated. Let's smooth the data and plot again.</p>
+<p>The data is very noisy with spikes that appear correlated. This time we smooth the data before plotting.</p>
 </div>
 
 
 <div class="in">
 <pre>for drug in drugs:
-    smoothed=smoothed_data[drug]
+    event_list=[]
+    for entry in data[drug]:
+        event_list.append( entry[&#39;event_count&#39;] )
+    smoothed=smooth(np.array(event_list),50)
     x=np.arange(len(smoothed))
     plt.plot(x, smoothed, label=drug)
     
@@ -354,7 +367,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_28_0.png">
+<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_31_0.png">
 </pre>
 </div>
 
@@ -393,7 +406,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_30_0.png">
+<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_33_0.png">
 </pre>
 </div>
 
@@ -426,7 +439,7 @@ plt.show()</pre>
 
 <div class="out">
 <pre>
-<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_32_0.png">
+<img src="../../intermediate/datavis/04-fda-part2_files/intermediate/datavis/04-fda-part2_35_0.png">
 </pre>
 </div>
 
